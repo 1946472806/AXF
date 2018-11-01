@@ -8,5 +8,32 @@
 {% endblock %}
 
 {% block content %}
-    闪购超市
+<div class="market">
+    {#    侧边栏#}
+    <div class="type-slider">
+        <ul>
+            {% for foodtype in foodtypes %}
+                <li class="type-item">
+                    <span></span>
+                    <a href="{% url 'appaxf:market' foodtype.typeid childid 0 %}">
+                        {{ foodtype.typename }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    {#    顶部导航#}
+    <nav>
+        <ul>
+            <li id="allBt">
+                <span>全部类型 <b class="glyphicon glyphicon-chevron-up"></b> </span>
+            </li>
+            <li id="sortBt">
+                <span>综合排序 <b class="glyphicon glyphicon-chevron-up"></b> </span>
+            </li>
+        </ul>
+    </nav>
+
+</div>
 {% endblock %}

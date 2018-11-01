@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from appaxf.models import Wheel, Nav, Mustbuy, Shop, MainShow
+from appaxf.models import Wheel, Nav, Mustbuy, Shop, MainShow, Foodtypes, Goods
 
 
 def home(request):  # 首页
@@ -35,8 +35,22 @@ def home(request):  # 首页
     return render(request, 'home/home.html',context=data)
 
 
-def market(request):    # 闪购超市
-    return render(request, 'market/market.html')
+def market(request, categoryid, childid, sortid):    # 闪购超市
+    #商品分类数据
+    foodtypes = Foodtypes.objects.all()
+
+    # 根据商品分类 数据过滤
+    if childid == '0':  # 全部分类
+        goodslist = Goods.objects.filter(categoryid=categoryid)
+    else: # 对应分类
+        goodslist = Goods.objects.filter(categoryid=categoryid, childcid=childid)
+
+    data = {
+        'foodtypes':foodtypes,
+        'goodslist': goodslist,
+        'childid': childid,
+    }
+    return render(request, 'market/market.html',context=data)
 
 
 def cart(request):  # 购物车
