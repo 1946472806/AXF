@@ -9,6 +9,9 @@ body {
 	padding: 0;
 	background: #eee;
 }
+a{
+	color: black;
+}
 
 header {
 	width: 100%;

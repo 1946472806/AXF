@@ -67,14 +67,14 @@ class MainShow(models.Model):
     def __str__(self):
         return self.name
 
-# 商品分类
+# 商品分类,相当于大类
 class Foodtypes(models.Model):
     # 分类id
     typeid = models.CharField(max_length=10)
     # 分类名称
     typename = models.CharField(max_length=100)
     # 子类名称
-    childtypenames = models.CharField(max_length=200)
+    childtypenames = models.CharField(max_length=200) #小类名称
     # 分类排序(显示的先后顺序)
     typesort = models.IntegerField()
 
@@ -104,9 +104,9 @@ class Goods(models.Model):
     price = models.FloatField()
     # 超市价格
     marketprice = models.FloatField()
-    # 分类ID
+    # 分类ID,相当于就是左侧栏的大类
     categoryid = models.CharField(max_length=10)
-    # 子类ID
+    # 子类ID,相当于就是分类查询的小类
     childcid = models.CharField(max_length=10)
     # 子类名字
     childcidname = models.CharField(max_length=50)
@@ -119,3 +119,34 @@ class Goods(models.Model):
 
     class Meta:
         db_table = 'axf_goods'
+
+# 用户模型类
+class User(models.Model):
+    # 账号
+    account = models.CharField(max_length=20, unique=True)
+    # 密码
+    password = models.CharField(max_length=256)
+    # 名字
+    name = models.CharField(max_length=100)
+    # 电话
+    tel = models.CharField(max_length=20)
+    # 地址
+    address = models.CharField(max_length=256)
+    # 头像
+    img = models.CharField(max_length=100)
+    # 等级
+    rank = models.IntegerField(default=1)
+    # token
+    token = models.CharField(max_length=100)
+
+
+# 购物车 模型类
+class Cart(models.Model):
+    # 用户
+    user = models.ForeignKey(User)
+    # 商品
+    goods = models.ForeignKey(Goods)
+    # 选择数量
+    number = models.IntegerField(default=1)
+    # 是否选中
+    isselect = models.BooleanField(default=True)

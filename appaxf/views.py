@@ -1,5 +1,6 @@
+from django.http import HttpResponse
 from django.shortcuts import render
-from appaxf.models import Wheel, Nav, Mustbuy, Shop, MainShow, Foodtypes, Goods
+from appaxf.models import Wheel, Nav, Mustbuy, Shop, MainShow, Foodtypes, Goods, User, Cart
 
 
 def home(request):  # 首页
@@ -39,17 +40,49 @@ def market(request, categoryid, childid, sortid):    # 闪购超市
     #商品分类数据
     foodtypes = Foodtypes.objects.all()
 
+    # 获取点击 历史 [typeIndex]
+    # 有typeIndex
+    # 无typeIndex，默认0
+    typeIndex = int(request.COOKIES.get('typeIndex', 0))
+    categoryid = foodtypes[typeIndex].typeid
+
+    #此大类对应下的子类
+    chidnames = foodtypes.get(typeid=categoryid).childtypenames
+    chidlist = []
+    for chidname in chidnames.split('#'):
+        arr = chidname.split(':')
+        obj = {'childname':arr[0], 'childid':arr[1]}
+        chidlist.append(obj)
+
     # 根据商品分类 数据过滤
     if childid == '0':  # 全部分类
         goodslist = Goods.objects.filter(categoryid=categoryid)
     else: # 对应分类
         goodslist = Goods.objects.filter(categoryid=categoryid, childcid=childid)
 
+    if sortid == '1': #销量排序
+        goodslist = goodslist.order_by('productnum')
+    elif sortid == '2': #价格最低
+        goodslist = goodslist.order_by('price')
+    elif sortid == '3': #价格最高
+        goodslist = goodslist.order_by('-price')
+
+    #登录用户购物车信息
+    token = request.session.get('token')
+    carts = []
+    if token:
+        user = User.objects.get(token=token)
+        carts = Cart.objects.filter(user=user).exclude(number=0)
+
     data = {
         'foodtypes':foodtypes,
         'goodslist': goodslist,
         'childid': childid,
+        'carts':carts,
+        'chidlist':chidlist,
+        'categoryid': categoryid,
     }
+
     return render(request, 'market/market.html',context=data)
 
 
