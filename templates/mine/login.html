@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block extcss %}
+    <link rel="stylesheet" href="{% static 'mine/css/login.css' %}">
+{% endblock %}
+{% block title %}
+    登录界面
+{% endblock %}
+
+{% block content %}
+ <div class="login">
+    <div class="back"><a href="{% url 'appaxf:mine' %}"><span class=" glyphicon glyphicon-remove "></span></a></div>
+    <form action="{% url 'appaxf:login' %}" method="post" enctype="multipart/form-data">
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">账号</span>
+            <input type="text" class="form-control" placeholder="账号长度为6~12个字符" aria-describedby="basic-addon1" name="userid" id="userid">
+        </div>
+        <span class="err" id="useriderror"></span>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon2">密码</span>
+            <input type="password" class="form-control" placeholder="密码长度为6~16个字符" aria-describedby="basic-addon1" name="password" id="password">
+        </div>
+
+        <div class="msg" id="msg">{{ msg }}</div>
+
+        <div class="login-wrapper">
+            <button class="btn btn-primary" id="subButton" type="submit">登录</button>
+        </div>
+    </form>
+ </div>
+{% endblock %}
+
+{% block extjs %}
+    <script type="text/javascript" src="{% static 'mine/js/login.js' %}"></script>
+{% endblock %}

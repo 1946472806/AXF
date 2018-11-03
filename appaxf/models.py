@@ -123,10 +123,10 @@ class Goods(models.Model):
 # 用户模型类
 class User(models.Model):
     # 账号
-    account = models.CharField(max_length=20, unique=True)
+    userid = models.CharField(max_length=20, unique=True)
     # 密码
     password = models.CharField(max_length=256)
-    # 名字
+    # 名字-昵称
     name = models.CharField(max_length=100)
     # 电话
     tel = models.CharField(max_length=20)

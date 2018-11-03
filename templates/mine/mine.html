@@ -8,5 +8,22 @@
 {% endblock %}
 
 {% block content %}
-    我的
+<div class="mine">
+    <div class="user-wrapper">
+        <div class="user-img">
+            <img src="{{ img }}">
+        </div>
+        <div class="user-content">
+            <p><a href="{% url 'appaxf:login' %}"><span class="glyphicon glyphicon-user"></span>{{ user }}</a></p>
+            <p><span class="glyphicon glyphicon-star">等级: {{ rank }}</span></p>
+            <a class="register" href="{% url 'appaxf:register' %}">
+                {% if not flag %}
+                    注册
+                {% else %}
+                    有效
+                {% endif %}
+            </a>
+        </div>
+    </div>
+</div>
 {% endblock %}
