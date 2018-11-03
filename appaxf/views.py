@@ -99,7 +99,7 @@ def mine(request):  # 我的
     data = {}
     #未登录
     if not token:
-        data['user'] = '未登录(点这里登录)'
+        data['user'] = '未登录(点击登录)'
         data['rank'] = '无等级'
         data['img'] = '/static/uploads/axf.png'
         data['flag'] = False

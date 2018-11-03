@@ -9,7 +9,9 @@ footer .mine span {
 footer .mine dd {
     color: #ffd601;
 }
-
+span,a,dd{
+    font-size: 1rem;
+}
 .mine .user-wrapper{
     height: 6rem;
     background: pink;
@@ -96,6 +98,9 @@ footer .mine dd {
 
 .mine .other .quit{
     text-align: center;
+    background: white;
+    padding: 1rem 0;
+    margin: 0.5rem 0;
 }
 .mine .other .quit a{
     color: grey;
