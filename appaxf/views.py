@@ -181,3 +181,59 @@ def loginout(request):
     request.session.flush()
     return redirect('appaxf:mine')
 
+
+def addcarts(request):
+    goodsid = request.GET.get('goodsid')
+    token = request.session.get('username')
+
+    if token: #已登录
+        try:
+           user = User.objects.get(token=token)
+           goods = Goods.objects.get(pk=goodsid)
+
+           carts = Cart.objects.filter(user=user,goods=goods)
+           if carts.count():
+               cart = carts.first()
+               cart.number += 1
+               cart.save()
+               return JsonResponse({'msg': '添加数量成功!', 'number':cart.number,'backstatus': '1'})
+           else:
+               cart = Cart()
+               cart.user = user
+               cart.goods = goods
+               cart.number = 1
+               cart.save()
+               return JsonResponse({'msg': '添加数量成功!','number':1, 'backstatus': '1'})
+        except Exception as e:
+            return JsonResponse({'msg': '数据有误!', 'backstatus': '-1'})
+    else: #未登录
+        return JsonResponse({'msg': '还没有登录!', 'backstatus': '-1'})
+
+
+def subcarts(request):
+    goodsid = request.GET.get('goodsid')
+    token = request.session.get('username')
+
+    if token:  # 已登录
+        try:
+            user = User.objects.get(token=token)
+            goods = Goods.objects.get(pk=goodsid)
+
+            carts = Cart.objects.filter(user=user, goods=goods)
+            if carts.count():
+                cart = carts.first()
+                number = cart.number
+                if number > 1:
+                    cart.number -= 1
+                    cart.save()
+                    return JsonResponse({'msg': '减少数量成功!', 'number': cart.number, 'backstatus': '1'})
+                else:
+                    cart.number = 0
+                    cart.save()
+                    return JsonResponse({'msg': '减少数量成功!', 'number': cart.number, 'backstatus': '1'})
+            else:
+                return JsonResponse({'msg': '', 'number': 0, 'backstatus': '1'})
+        except Exception as e:
+            return JsonResponse({'msg': '数据有误!', 'backstatus': '-1'})
+    else:  # 未登录
+        return JsonResponse({'msg': '还没有登录!', 'backstatus': '-1'})

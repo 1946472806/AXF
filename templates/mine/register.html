@@ -11,45 +11,66 @@
  <div class="register">
     <div class="back"><a href="{% url 'appaxf:mine' %}"><span class=" glyphicon glyphicon-remove "></span></a></div>
     <form action="{% url 'appaxf:register' %}" method="post" enctype="multipart/form-data">
-        <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">账号</span>
-            <input type="text" class="form-control" placeholder="账号长度为6~12个字符" aria-describedby="basic-addon1" name="userid" id="userid">
-        </div>
-        <span class="error" id="useriderror"></span>
-
-        <div class="input-group">
-            <span class="input-group-addon" id="basic-addon2">密码</span>
-            <input type="password" class="form-control" placeholder="密码长度为6~16个字符" aria-describedby="basic-addon1" name="password" id="password">
-        </div>
-        <span class="error" id="passworderror">密码格式不正确</span>
-
-        <div class="input-group">
-            <span class="input-group-addon" id="basic-addon3">验证</span>
-            <input type="password" class="form-control" placeholder="密码长度为6~16个字符" aria-describedby="basic-addon1" name="verifypassword" id="verifypassword">
-        </div>
-        <span class="error" id="verifypassworderror">密码输入不一致</span>
-
-        <div class="input-group">
-            <span class="input-group-addon" id="basic-addon4">昵称</span>
-            <input type="text" class="form-control" aria-describedby="basic-addon1" name="nickname" id="nickname">
+        <div class="form-group has-feedback" id="userid">
+            <div class="input-group">
+                <div class="input-group-addon">账号</div>
+                <input type="text" class="form-control" placeholder="账号长度为6~12个字符" name="userid" required="required">
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            </div>
+            <i></i>
         </div>
 
-        <div class="input-group tel">
-            <span class="input-group-addon" id="basic-addon5">电话</span>
-            <input type="text" class="form-control" aria-describedby="basic-addon1" name="telphone" id="telphone">
-            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+        <div class="form-group" id="password">
+            <div class="input-group">
+                <div class="input-group-addon">密码</div>
+                <input type="password" class="form-control" placeholder="密码长度为6~16个字符" name="password">
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            </div>
+            <i></i>
         </div>
 
-        <div class="input-group">
-            <span class="input-group-addon" id="basic-addon6">地址</span>
-            <input type="text" class="form-control" aria-describedby="basic-addon1" name="address">
+        <div class="form-group" id="verifypassword">
+            <div class="input-group">
+                <div class="input-group-addon">验证</div>
+                <input type="password" class="form-control" placeholder="密码长度为6~16个字符"  name="verifypassword">
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            </div>
+            <i></i>
         </div>
 
-        <div class="input-group">
-            <span class="input-group-addon" id="basic-addon7">头像</span>
-            <input type="file" class="form-control" aria-describedby="basic-addon1" name="file">
+        <div class="form-group" id="nickname">
+            <div class="input-group">
+                <div class="input-group-addon">昵称</div>
+                <input type="text" class="form-control" name="nickname">
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            </div>
+            <i></i>
         </div>
-        <button class="btn btn-primary" id="subButton" type="submit" disabled>注册</button>
+
+        <div class="form-group" id="telphone">
+            <div class="input-group tel">
+                <div class="input-group-addon">电话</div>
+                <input type="text" class="form-control" name="telphone">
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            </div>
+            <i></i>
+        </div>
+
+        <div class="form-group" id="address">
+            <div class="input-group">
+                <div class="input-group-addon">地址</div>
+                <input type="text" class="form-control" name="address">
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">头像</div>
+                <input type="file" class="form-control" name="file">
+            </div>
+        </div>
+        <input id="subButton" type="submit" value="注册">
     </form>
  </div>
 {% endblock %}

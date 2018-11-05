@@ -16,13 +16,11 @@
         <div class="user-content">
             <p><a href="{% url 'appaxf:login' %}" style="font-size: 1rem;"><span class="glyphicon glyphicon-user"></span>{{ user }}</a></p>
             <p><span class="glyphicon glyphicon-star">等级: {{ rank }}</span></p>
-            <a class="register" href="{% url 'appaxf:register' %}">
-                {% if not flag %}
-                    注册
-                {% else %}
-                    有效
-                {% endif %}
-            </a>
+            {% if not flag %}
+                <a class="register" href="{% url 'appaxf:register' %}">注册<a>
+            {% else %}
+                <a class="register" href="">有效<a>
+            {% endif %}
         </div>
     </div>
     <div class="collect">
@@ -88,9 +86,11 @@
                 </li>
             </ul>
         </section>
-        <div class="quit">
-            <a href="{% url 'appaxf:loginout' %}">退出登录</a>
-        </div>
+        {% if flag %}
+            <div class="quit">
+                <a href="{% url 'appaxf:loginout' %}">退出登录</a>
+            </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

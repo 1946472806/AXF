@@ -16,6 +16,10 @@
     color: #e62e2e;
     display: none;
 }
+.register i{
+    color: red;
+    font-size: 0.8rem;
+}
 
 #subButton {
     width: 100%;
