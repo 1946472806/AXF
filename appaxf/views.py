@@ -72,7 +72,7 @@ def market(request, categoryid, childid, sortid):    # 闪购超市
         goodslist = goodslist.order_by('-price')
 
     #登录用户购物车信息
-    token = request.session.get('token')
+    token = request.session.get('username')
     carts = []
     if token:
         user = User.objects.get(token=token)
@@ -91,7 +91,13 @@ def market(request, categoryid, childid, sortid):    # 闪购超市
 
 
 def cart(request):  # 购物车
-    return render(request, 'cart/cart.html')
+    token = request.session.get('username')
+    carts = []
+    if token:
+        user = User.objects.get(token=token)
+        carts = Cart.objects.filter(user=user).exclude(number=0)
+
+    return render(request, 'cart/cart.html',{'carts':carts})
 
 
 def mine(request):  # 我的
@@ -167,7 +173,7 @@ def login(request):
         #检测账号和密码是否正确
         users = User.objects.filter(userid=userid,password=password)
         if not users.count():
-            msg = '账号或密码错误!'
+            msg = '账号密码错误!'
             return render(request,'mine/login.html',{'msg':msg})
 
         #更新并保存当前状态
