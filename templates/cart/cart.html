@@ -13,7 +13,7 @@
         <ul>
             {% for cart in carts %}
                  <li class="goods">
-                    <div class="confirm-wrapper">
+                    <div class="confirm-wrapper" cartid="{{ cart.id }}">
                         {% if cart.isselect %}
                             <span class="glyphicon glyphicon-ok"></span>
                         {% else %}

@@ -14,4 +14,6 @@ urlpatterns = [
     url(r'^loginout/$', views.loginout, name='loginout'),   # 退出登录
     url(r'^addcarts/$', views.addcarts, name='addcarts'),   # 添加购物车
     url(r'^subcarts/$', views.subcarts, name='subcarts'),  # 减少购物车
+    url(r'^changesel/$', views.changesel, name='changesel'),  # 选择或取消选择
+    url(r'^changeall/$', views.changeall, name='changeall'),  # 全选或全消
 ]

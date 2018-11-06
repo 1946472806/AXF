@@ -188,7 +188,7 @@ def loginout(request):
     request.session.flush()
     return redirect('appaxf:mine')
 
-
+#加
 def addcarts(request):
     goodsid = request.GET.get('goodsid')
     token = request.session.get('username')
@@ -216,7 +216,7 @@ def addcarts(request):
     else: #未登录
         return JsonResponse({'msg': '还没有登录!', 'backstatus': '-1'})
 
-
+#减
 def subcarts(request):
     goodsid = request.GET.get('goodsid')
     token = request.session.get('username')
@@ -235,3 +235,34 @@ def subcarts(request):
     except Exception as e:
         return JsonResponse({'msg': '数据有误!', 'backstatus': '-1'})
 
+#选择或取消选择
+def changesel(request):
+    cartid = request.GET.get('cartid')
+
+    try:
+        cart = Cart.objects.filter(pk=cartid).first()
+        cart.isselect = not cart.isselect
+        cart.save()
+        return JsonResponse({'msg':'数据状态改变成功!','backstatus':'1'})
+    except Exception as e:
+        return JsonResponse({'msg': '数据状态改变失败!', 'backstatus': '-1'})
+
+# 全选或全消
+def changeall(request):
+    flag = request.GET.get('flag')
+    token = request.session.get('username')
+    try:
+        user = User.objects.get(token=token)
+        carts = Cart.objects.filter(user=user)
+        if flag == '1': #全选
+            for cart in carts:
+                cart.isselect = 1
+                cart.save()
+            return JsonResponse({'msg':'全选成功!','backstatus':'1'})
+        else: #全消
+            for cart in carts:
+                cart.isselect = 0
+                cart.save()
+            return JsonResponse({'msg': '全消成功!', 'backstatus': '1'})
+    except Exception as e:
+        return JsonResponse({'msg': '保存数据失败!', 'backstatus': '-1'})
