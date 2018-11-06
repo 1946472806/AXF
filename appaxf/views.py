@@ -96,8 +96,9 @@ def cart(request):  # 购物车
     if token:
         user = User.objects.get(token=token)
         carts = Cart.objects.filter(user=user).exclude(number=0)
-
-    return render(request, 'cart/cart.html',{'carts':carts})
+        return render(request, 'cart/cart.html',{'carts':carts})
+    else:
+        return redirect('appaxf:login')
 
 
 def mine(request):  # 我的
@@ -220,26 +221,17 @@ def subcarts(request):
     goodsid = request.GET.get('goodsid')
     token = request.session.get('username')
 
-    if token:  # 已登录
-        try:
-            user = User.objects.get(token=token)
-            goods = Goods.objects.get(pk=goodsid)
+    #不用再判断是否登录,能到这个路由函数说明已经登录了
+    try:
+        user = User.objects.get(token=token)
+        goods = Goods.objects.get(pk=goodsid)
 
-            carts = Cart.objects.filter(user=user, goods=goods)
-            if carts.count():
-                cart = carts.first()
-                number = cart.number
-                if number > 1:
-                    cart.number -= 1
-                    cart.save()
-                    return JsonResponse({'msg': '减少数量成功!', 'number': cart.number, 'backstatus': '1'})
-                else:
-                    cart.number = 0
-                    cart.save()
-                    return JsonResponse({'msg': '减少数量成功!', 'number': cart.number, 'backstatus': '1'})
-            else:
-                return JsonResponse({'msg': '', 'number': 0, 'backstatus': '1'})
-        except Exception as e:
-            return JsonResponse({'msg': '数据有误!', 'backstatus': '-1'})
-    else:  # 未登录
-        return JsonResponse({'msg': '还没有登录!', 'backstatus': '-1'})
+        carts = Cart.objects.filter(user=user, goods=goods)
+        cart = carts.first()
+        cart.number -= 1
+        cart.save()
+        return JsonResponse({'msg': '减少数量成功!', 'number': cart.number, 'backstatus': '1'})
+
+    except Exception as e:
+        return JsonResponse({'msg': '数据有误!', 'backstatus': '-1'})
+

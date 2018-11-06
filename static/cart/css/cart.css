@@ -131,3 +131,8 @@ footer .cart dd {
     text-align: center;
     color: white;
 }
+
+/*重新设置滚动条的高度*/
+.hidescroll{
+	height: 93%;
+}

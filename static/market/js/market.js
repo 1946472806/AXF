@@ -5,7 +5,6 @@ $(function () {
 
     // 获取下标 typeIndex
     typeIndex = $.cookie('typeIndex')
-    console.log(typeIndex)
     if(typeIndex){  // 存在，对应分类
         $('.type-slider .type-item').eq(typeIndex).addClass('active')
     } else {    // 不存在，默认就是热榜
@@ -20,7 +19,6 @@ $(function () {
         // 保存下标 cookie
         $.cookie('typeIndex', $(this).index(),{exprires:3, path:'/'})
     })
-
 
 
 
@@ -72,6 +70,18 @@ $(function () {
         $('#mysortBt b').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up')
     })
 
+    //显示操作
+    $('.bt-wrapper .num').each(function () {
+        var num = parseInt($(this).html())
+        if (num > 0){
+            $(this).show()
+            $(this).prev().show()
+        } else {
+             $(this).hide()
+            $(this).prev().hide()
+        }
+    })
+
     //加
     $('.bt-wrapper .glyphicon-plus').click(function () {
         var goodsid = $(this).attr('goodsid')
@@ -100,7 +110,7 @@ $(function () {
             } else {
                 if (data['number'] == 0){
                     $obj.next().hide()
-                    // $obj.hide()
+                    $obj.hide()
                 } else {
                     $obj.next().html(data['number']).show()
                     $obj.show()

@@ -12,7 +12,7 @@
     <div class="cart">
         <ul>
             {% for cart in carts %}
-                 <li>
+                 <li class="goods">
                     <div class="confirm-wrapper">
                         {% if cart.isselect %}
                             <span class="glyphicon glyphicon-ok"></span>
@@ -27,8 +27,8 @@
                         </div>
                         <div class="detail">
                             <p class="name">{{ cart.goods.productlongname }}</p>
-                            <p class="price">{{ cart.goods.price }}</p>
-                            <p class="num">x{{ cart.number }}</p>
+                            <p class="price" attr="{{ cart.goods.price }}">{{ cart.goods.price }}</p>
+                            <p class="num" attr="{{ cart.number }}">x{{ cart.number }}</p>
                         </div>
                     </div>
                 </li>
