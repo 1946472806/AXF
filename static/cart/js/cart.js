@@ -10,7 +10,7 @@ $(function () {
 
         selall = true
         //发起ajax请求,将购物车里面的这个商品的选择状态改变一下
-        $.get('/changesel/',{'cartid':cartid},function (data) {
+        $.get('/axf/changesel/',{'cartid':cartid},function (data) {
             if (data['backstatus'] == 1){
                 if ($that.find('.glyphicon-ok').length){
                     $that.find('span').removeClass('glyphicon-ok').addClass('no')
@@ -31,7 +31,7 @@ $(function () {
         selall = true
         if ($sel.find('.no').length){ //没有全选的情况下
             //发起ajax请求,将购物车里面的这个用户的全部商品的选择状态改成True
-            $.get('/changeall/',{'flag':'1'},function (data) {
+            $.get('/axf/changeall/',{'flag':'1'},function (data) {
                 if (data['backstatus'] == 1) {
                     $shops.each(function () {
                         $(this).find('span').removeClass('no').addClass('glyphicon glyphicon-ok')
@@ -45,7 +45,7 @@ $(function () {
 
         }else {
             //发起ajax请求,将购物车里面的这个用户的全部商品的选择状态改成False
-            $.get('/changeall/',{'flag':'0'},function (data) {
+            $.get('/axf/changeall/',{'flag':'0'},function (data) {
                 if (data['backstatus'] == 1) {
                     $shops.each(function () {
                         $(this).find('span').removeClass('glyphicon glyphicon-ok').addClass('no')

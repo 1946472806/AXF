@@ -4,7 +4,7 @@ $(function () {
     $('#userid input').blur(function () {
         if($(this).val() == '') return
         //发起ajax请求，验证用户是否已经存在
-        $.get('/verifyuser/',{'useriderror':$(this).val()},function (data) {
+        $.get('/axf/verifyuser/',{'useriderror':$(this).val()},function (data) {
             if (data['backstatus'] == 0){ //已经存在此用户
                 $('#userid i').html(data['msg'])
                 $('#userid').removeClass('has-success').addClass('has-error')

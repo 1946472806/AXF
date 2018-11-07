@@ -8,8 +8,8 @@ from django.shortcuts import render, redirect
 from AXF import settings
 from appaxf.models import Wheel, Nav, Mustbuy, Shop, MainShow, Foodtypes, Goods, User, Cart
 
-
-def home(request):  # 首页
+# 首页
+def home(request):
     #顶部轮播图数据
     wheels = Wheel.objects.all()
 
@@ -41,8 +41,8 @@ def home(request):  # 首页
     }
     return render(request, 'home/home.html',context=data)
 
-
-def market(request, categoryid, childid, sortid):    # 闪购超市
+# 闪购超市
+def market(request, categoryid, childid, sortid):
     #商品分类数据
     foodtypes = Foodtypes.objects.all()
 
@@ -89,8 +89,8 @@ def market(request, categoryid, childid, sortid):    # 闪购超市
 
     return render(request, 'market/market.html',context=data)
 
-
-def cart(request):  # 购物车
+# 购物车
+def cart(request):
     token = request.session.get('username')
     carts = []
     if token:
@@ -100,8 +100,8 @@ def cart(request):  # 购物车
     else:
         return redirect('appaxf:login')
 
-
-def mine(request):  # 我的
+# 我的
+def mine(request):
     token = request.session.get('username')
     data = {}
     #未登录
@@ -119,8 +119,8 @@ def mine(request):  # 我的
     #已登录
     return render(request, 'mine/mine.html',context=data)
 
-
-def register(request): #注册
+#注册
+def register(request):
     if request.method == 'GET':
         return render(request,'mine/register.html')
     elif request.method == 'POST':
@@ -149,8 +149,8 @@ def register(request): #注册
         #页面重定向到我的
         return redirect('appaxf:mine')
 
-
-def verifyuser(request): # 检测用户
+# 检测用户
+def verifyuser(request):
     userid = request.GET.get('useriderror')
     try:
         user = User.objects.get(userid=userid)
