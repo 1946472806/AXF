@@ -140,7 +140,7 @@ class User(models.Model):
     token = models.CharField(max_length=100)
 
 
-# 购物车 模型类
+# 购物车表
 class Cart(models.Model):
     # 用户
     user = models.ForeignKey(User)
@@ -150,3 +150,33 @@ class Cart(models.Model):
     number = models.IntegerField(default=1)
     # 是否选中
     isselect = models.BooleanField(default=True)
+
+# 订单主表
+class Order(models.Model):
+    #用户
+    user = models.ForeignKey(User)
+    #订单号
+    ordernum = models.CharField(max_length=256)
+    #创建时间
+    createtime = models.DateTimeField(auto_now=True)
+    #订单状态(1.未付款 2.已付款未发货 3.已发货未收货 4.已收货未评价 5.已评价 6.退款)
+    status = models.IntegerField(default=1)
+
+    @classmethod
+    def createorder(cls,user,ordernum):
+        order = cls(user=user,ordernum=ordernum)
+        return order
+
+# 订单明细表
+class Orderinfo(models.Model):
+    # 订单
+    order = models.ForeignKey(Order)
+    #商品
+    goods = models.ForeignKey(Goods)
+    #商品数量
+    number = models.IntegerField(default=1)
+
+    @classmethod
+    def createorderinfo(cls, order, goods,number):
+        orderinfo = cls(order=order, goods=goods,number=number)
+        return orderinfo

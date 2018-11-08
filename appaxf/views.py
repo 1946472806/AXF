@@ -1,12 +1,15 @@
 import hashlib
 import os
+import random
+import time
 import uuid
 
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 
 from AXF import settings
-from appaxf.models import Wheel, Nav, Mustbuy, Shop, MainShow, Foodtypes, Goods, User, Cart
+from appaxf.models import Wheel, Nav, Mustbuy, Shop, MainShow, Foodtypes, Goods, User, Cart, Order, Orderinfo
+
 
 # 首页
 def home(request):
@@ -251,18 +254,46 @@ def changesel(request):
 def changeall(request):
     flag = request.GET.get('flag')
     token = request.session.get('username')
+    if flag == '1':  # 全选
+        isselect = 1
+    else:  # 全消
+        isselect = 0
     try:
         user = User.objects.get(token=token)
         carts = Cart.objects.filter(user=user)
-        if flag == '1': #全选
-            for cart in carts:
-                cart.isselect = 1
-                cart.save()
-            return JsonResponse({'msg':'全选成功!','backstatus':'1'})
-        else: #全消
-            for cart in carts:
-                cart.isselect = 0
-                cart.save()
-            return JsonResponse({'msg': '全消成功!', 'backstatus': '1'})
+        for cart in carts:
+            cart.isselect = isselect
+            cart.save()
+        return JsonResponse({'msg':'反选成功!','backstatus':'1'})
+
     except Exception as e:
         return JsonResponse({'msg': '保存数据失败!', 'backstatus': '-1'})
+
+#下单
+def placeorder(request):
+    token = request.session.get('username')
+    user = User.objects.get(token=token)
+
+    try:
+        carts = Cart.objects.filter(user=user,isselect=1)
+        #订单号
+        ordernum = str(uuid.uuid5(uuid.uuid4(), 'order'))
+        order = Order.createorder(user, ordernum)
+        order.save()
+        #生成订单主表和明细表数据
+        for cart in carts:
+            orderinfo = Orderinfo.createorderinfo(order,cart.goods,cart.number)
+            orderinfo.save()
+            #删除已下单的数据
+            cart.delete()
+        #跳转到已下单界面
+        return JsonResponse({'msg':'下单成功！','ordernum':ordernum,'backstatus': '1'})
+    except Exception as e:
+        return JsonResponse({'msg': '下单失败!', 'backstatus': '-1'})
+
+#下单详情
+def getorderinfo(request):
+    ordernum = request.GET.get('ordernum')
+
+    order = Order.objects.get(ordernum=ordernum)
+    return render(request,'order/orderinfo.html',{'order':order})

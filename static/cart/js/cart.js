@@ -87,4 +87,17 @@ $(function () {
             $('.cart .bill .all').find('span').removeClass('glyphicon glyphicon-ok').addClass('no')
         }
     }
+
+    //下单
+    $('.cart .bill .bill-right').click(function () {
+        var $billright = $(this)
+        //发起ajax请求
+        $.get('/axf/placeorder/',function (data) {
+            if (data['backstatus'] == '1'){
+                var ordernum = data['ordernum']
+                //跳转到下单详情界面
+                window.open('/axf/getorderinfo/?ordernum='+ordernum,target="_self")
+            }
+        })
+    })
 })

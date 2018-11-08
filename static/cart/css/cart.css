@@ -130,6 +130,7 @@ footer .cart dd {
     background: #ffd601;
     text-align: center;
     color: white;
+    cursor: pointer;
 }
 
 /*重新设置滚动条的高度*/

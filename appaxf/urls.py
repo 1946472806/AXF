@@ -16,4 +16,6 @@ urlpatterns = [
     url(r'^subcarts/$', views.subcarts, name='subcarts'),  # 减少购物车
     url(r'^changesel/$', views.changesel, name='changesel'),  # 选择或取消选择
     url(r'^changeall/$', views.changeall, name='changeall'),  # 全选或全消
+    url(r'^placeorder/$', views.placeorder, name='placeorder'), #下单
+    url(r'^getorderinfo/$', views.getorderinfo, name='getorderinfo'), #下单详情
 ]
