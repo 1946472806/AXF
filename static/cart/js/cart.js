@@ -92,7 +92,7 @@ $(function () {
     $('.cart .bill .bill-right').click(function () {
         var $billright = $(this)
         //发起ajax请求
-        $.get('/axf/placeorder/',function (data) {
+        $.get('/axf/placeorder/',{'test':'1111'},function (data) {
             if (data['backstatus'] == '1'){
                 var ordernum = data['ordernum']
                 //跳转到下单详情界面

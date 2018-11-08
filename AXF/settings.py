@@ -130,3 +130,6 @@ STATICFILES_DIRS = [
 
 #图片保存地址
 MEDIA_ROOT = os.path.join(BASE_DIR,'static/uploads')
+
+#支付相关key
+ALIPAY_ROOT = os.path.join(BASE_DIR, 'static/key')

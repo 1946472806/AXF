@@ -8,6 +8,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 
 from AXF import settings
+from appaxf.alipay import alipay_axf
 from appaxf.models import Wheel, Nav, Mustbuy, Shop, MainShow, Foodtypes, Goods, User, Cart, Order, Orderinfo
 
 
@@ -297,3 +298,29 @@ def getorderinfo(request):
 
     order = Order.objects.get(ordernum=ordernum)
     return render(request,'order/orderinfo.html',{'order':order})
+
+# 支付完成后，支付宝调用的(通知AXF服务端)
+def notifyurl(request):
+    return JsonResponse({'msg': 'success'})
+
+# 支付完成后，AXF客户端跳转的页面
+def returnurl(request):
+    return HttpResponse('进行页面跳转，回到axf.....')
+
+#支付宝支付
+def pay(request):
+    orderid = request.GET.get('orderid')
+    # 支付url
+    url = alipay_axf.direct_pay(
+        subject='测试订单 --- iphone XX',  # 订单名称
+        out_trade_no=orderid,  # 订单号
+        total_amount=1.1,  # 付款金额
+        # return_url='http://112.74.55.3/axf/returnurl/'
+        return_url='http://120.78.160.121/axf/returnurl/'
+    )
+
+    # 拼接支付网关
+    # alipay_url = 'https://openapi.alipaydev.com/gateway.do?{data}'.format(data=url)
+    alipay_url = 'https://openapi.alipaydev.com/gateway.do?{data}'.format(data=url)
+
+    return JsonResponse({'alipay_url': alipay_url})

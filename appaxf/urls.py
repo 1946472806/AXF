@@ -18,4 +18,8 @@ urlpatterns = [
     url(r'^changeall/$', views.changeall, name='changeall'),  # 全选或全消
     url(r'^placeorder/$', views.placeorder, name='placeorder'), #下单
     url(r'^getorderinfo/$', views.getorderinfo, name='getorderinfo'), #下单详情
+
+    url(r'^notifyurl/$', views.notifyurl, name='notifyurl'), # 支付完成后，支付宝调用的(通知AXF服务端)
+    url(r'^returnurl/$', views.returnurl, name='returnurl'),    # 支付完成后，AXF客户端跳转的页面
+    url(r'^pay/$', views.pay, name='pay'),  # 支付宝支付
 ]

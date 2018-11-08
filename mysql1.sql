@@ -33,7 +33,7 @@ CREATE TABLE `appaxf_cart` (
   KEY `appaxf_cart_user_id_d31f881f_fk_appaxf_user_id` (`user_id`),
   CONSTRAINT `appaxf_cart_goods_id_ff8aa535_fk_axf_goods_id` FOREIGN KEY (`goods_id`) REFERENCES `axf_goods` (`id`),
   CONSTRAINT `appaxf_cart_user_id_d31f881f_fk_appaxf_user_id` FOREIGN KEY (`user_id`) REFERENCES `appaxf_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,8 +42,67 @@ CREATE TABLE `appaxf_cart` (
 
 LOCK TABLES `appaxf_cart` WRITE;
 /*!40000 ALTER TABLE `appaxf_cart` DISABLE KEYS */;
-INSERT INTO `appaxf_cart` VALUES (1,0,1,531,2),(2,1,1,533,2),(3,1,1,532,2),(4,0,1,534,2),(5,1,1,536,2),(6,0,1,537,2),(7,2,1,487,2),(8,0,1,488,2);
+INSERT INTO `appaxf_cart` VALUES (1,0,0,531,2),(4,0,0,534,2),(6,0,0,537,2),(8,0,0,488,2),(12,3,0,497,2),(17,1,0,557,2);
 /*!40000 ALTER TABLE `appaxf_cart` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `appaxf_order`
+--
+
+DROP TABLE IF EXISTS `appaxf_order`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `appaxf_order` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ordernum` varchar(256) NOT NULL,
+  `createtime` datetime(6) NOT NULL,
+  `status` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `appaxf_order_user_id_4bb0bbd7_fk_appaxf_user_id` (`user_id`),
+  CONSTRAINT `appaxf_order_user_id_4bb0bbd7_fk_appaxf_user_id` FOREIGN KEY (`user_id`) REFERENCES `appaxf_user` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `appaxf_order`
+--
+
+LOCK TABLES `appaxf_order` WRITE;
+/*!40000 ALTER TABLE `appaxf_order` DISABLE KEYS */;
+INSERT INTO `appaxf_order` VALUES (1,'1541673115469739','2018-11-08 10:31:55.468365',1,2),(2,'1541673127248481','2018-11-08 10:32:07.433375',1,2),(3,'1541673253749429','2018-11-08 10:34:13.919690',1,2),(4,'27225b71-cfa2-56b1-916b-fa89921fb4f7','2018-11-08 11:08:08.295141',1,2),(5,'3b477f1b-522e-5a53-a5f4-2383ca8ff5e4','2018-11-08 11:16:45.226607',1,2),(6,'0aaac638-f404-5e00-b617-93878220ed19','2018-11-08 11:19:24.157846',1,2),(7,'0ae619c6-91c3-5e9e-a73f-49a2415cbe4d','2018-11-08 13:11:21.923824',1,2);
+/*!40000 ALTER TABLE `appaxf_order` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `appaxf_orderinfo`
+--
+
+DROP TABLE IF EXISTS `appaxf_orderinfo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `appaxf_orderinfo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `number` int(11) NOT NULL,
+  `goods_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `appaxf_orderinfo_goods_id_1512ad9d_fk_axf_goods_id` (`goods_id`),
+  KEY `appaxf_orderinfo_order_id_7e66bf9b_fk_appaxf_order_id` (`order_id`),
+  CONSTRAINT `appaxf_orderinfo_goods_id_1512ad9d_fk_axf_goods_id` FOREIGN KEY (`goods_id`) REFERENCES `axf_goods` (`id`),
+  CONSTRAINT `appaxf_orderinfo_order_id_7e66bf9b_fk_appaxf_order_id` FOREIGN KEY (`order_id`) REFERENCES `appaxf_order` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `appaxf_orderinfo`
+--
+
+LOCK TABLES `appaxf_orderinfo` WRITE;
+/*!40000 ALTER TABLE `appaxf_orderinfo` DISABLE KEYS */;
+INSERT INTO `appaxf_orderinfo` VALUES (1,1,533,1),(2,1,532,2),(3,2,487,3),(4,1,536,4),(5,2,495,5),(6,2,495,6),(7,1,554,6),(8,1,555,6),(9,2,556,6),(10,1,473,7),(11,2,496,7);
+/*!40000 ALTER TABLE `appaxf_orderinfo` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -74,7 +133,7 @@ CREATE TABLE `appaxf_user` (
 
 LOCK TABLES `appaxf_user` WRITE;
 /*!40000 ALTER TABLE `appaxf_user` DISABLE KEYS */;
-INSERT INTO `appaxf_user` VALUES (2,'15919913340','48882eebf82b367b540bb30a5160d74dabdcea05ac3c1c0c1a48da51d0c09e9ee9346ff5015b56de8af2d6751fe7ade56e96216767374d20753e087e7e7257f7','风清扬','15919913340','大学城','15919913340.png',1,'d6bfa697-4a39-52f6-acfb-b82240f8d408');
+INSERT INTO `appaxf_user` VALUES (2,'15919913340','48882eebf82b367b540bb30a5160d74dabdcea05ac3c1c0c1a48da51d0c09e9ee9346ff5015b56de8af2d6751fe7ade56e96216767374d20753e087e7e7257f7','风清扬','15919913340','大学城','15919913340.png',1,'8165f79a-04d6-570f-9726-2c413238d457');
 /*!40000 ALTER TABLE `appaxf_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -145,7 +204,7 @@ CREATE TABLE `auth_permission` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_permission_content_type_id_codename_01ab375a_uniq` (`content_type_id`,`codename`),
   CONSTRAINT `auth_permission_content_type_id_2f476e4b_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,7 +213,7 @@ CREATE TABLE `auth_permission` (
 
 LOCK TABLES `auth_permission` WRITE;
 /*!40000 ALTER TABLE `auth_permission` DISABLE KEYS */;
-INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can add permission',2,'add_permission'),(5,'Can change permission',2,'change_permission'),(6,'Can delete permission',2,'delete_permission'),(7,'Can add group',3,'add_group'),(8,'Can change group',3,'change_group'),(9,'Can delete group',3,'delete_group'),(10,'Can add user',4,'add_user'),(11,'Can change user',4,'change_user'),(12,'Can delete user',4,'delete_user'),(13,'Can add content type',5,'add_contenttype'),(14,'Can change content type',5,'change_contenttype'),(15,'Can delete content type',5,'delete_contenttype'),(16,'Can add session',6,'add_session'),(17,'Can change session',6,'change_session'),(18,'Can delete session',6,'delete_session'),(19,'Can add wheel',7,'add_wheel'),(20,'Can change wheel',7,'change_wheel'),(21,'Can delete wheel',7,'delete_wheel'),(22,'Can add nav',8,'add_nav'),(23,'Can change nav',8,'change_nav'),(24,'Can delete nav',8,'delete_nav'),(25,'Can add mustbuy',9,'add_mustbuy'),(26,'Can change mustbuy',9,'change_mustbuy'),(27,'Can delete mustbuy',9,'delete_mustbuy'),(28,'Can add shop',10,'add_shop'),(29,'Can change shop',10,'change_shop'),(30,'Can delete shop',10,'delete_shop'),(31,'Can add main show',11,'add_mainshow'),(32,'Can change main show',11,'change_mainshow'),(33,'Can delete main show',11,'delete_mainshow'),(34,'Can add foodtypes',12,'add_foodtypes'),(35,'Can change foodtypes',12,'change_foodtypes'),(36,'Can delete foodtypes',12,'delete_foodtypes'),(37,'Can add goods',13,'add_goods'),(38,'Can change goods',13,'change_goods'),(39,'Can delete goods',13,'delete_goods'),(40,'Can add cart',14,'add_cart'),(41,'Can change cart',14,'change_cart'),(42,'Can delete cart',14,'delete_cart'),(43,'Can add user',15,'add_user'),(44,'Can change user',15,'change_user'),(45,'Can delete user',15,'delete_user');
+INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can add permission',2,'add_permission'),(5,'Can change permission',2,'change_permission'),(6,'Can delete permission',2,'delete_permission'),(7,'Can add group',3,'add_group'),(8,'Can change group',3,'change_group'),(9,'Can delete group',3,'delete_group'),(10,'Can add user',4,'add_user'),(11,'Can change user',4,'change_user'),(12,'Can delete user',4,'delete_user'),(13,'Can add content type',5,'add_contenttype'),(14,'Can change content type',5,'change_contenttype'),(15,'Can delete content type',5,'delete_contenttype'),(16,'Can add session',6,'add_session'),(17,'Can change session',6,'change_session'),(18,'Can delete session',6,'delete_session'),(19,'Can add wheel',7,'add_wheel'),(20,'Can change wheel',7,'change_wheel'),(21,'Can delete wheel',7,'delete_wheel'),(22,'Can add nav',8,'add_nav'),(23,'Can change nav',8,'change_nav'),(24,'Can delete nav',8,'delete_nav'),(25,'Can add mustbuy',9,'add_mustbuy'),(26,'Can change mustbuy',9,'change_mustbuy'),(27,'Can delete mustbuy',9,'delete_mustbuy'),(28,'Can add shop',10,'add_shop'),(29,'Can change shop',10,'change_shop'),(30,'Can delete shop',10,'delete_shop'),(31,'Can add main show',11,'add_mainshow'),(32,'Can change main show',11,'change_mainshow'),(33,'Can delete main show',11,'delete_mainshow'),(34,'Can add foodtypes',12,'add_foodtypes'),(35,'Can change foodtypes',12,'change_foodtypes'),(36,'Can delete foodtypes',12,'delete_foodtypes'),(37,'Can add goods',13,'add_goods'),(38,'Can change goods',13,'change_goods'),(39,'Can delete goods',13,'delete_goods'),(40,'Can add cart',14,'add_cart'),(41,'Can change cart',14,'change_cart'),(42,'Can delete cart',14,'delete_cart'),(43,'Can add user',15,'add_user'),(44,'Can change user',15,'change_user'),(45,'Can delete user',15,'delete_user'),(46,'Can add orderinfo',16,'add_orderinfo'),(47,'Can change orderinfo',16,'change_orderinfo'),(48,'Can delete orderinfo',16,'delete_orderinfo'),(49,'Can add order',17,'add_order'),(50,'Can change order',17,'change_order'),(51,'Can delete order',17,'delete_order');
 /*!40000 ALTER TABLE `auth_permission` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -508,7 +567,7 @@ CREATE TABLE `django_content_type` (
   `model` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label`,`model`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -517,7 +576,7 @@ CREATE TABLE `django_content_type` (
 
 LOCK TABLES `django_content_type` WRITE;
 /*!40000 ALTER TABLE `django_content_type` DISABLE KEYS */;
-INSERT INTO `django_content_type` VALUES (1,'admin','logentry'),(14,'appaxf','cart'),(12,'appaxf','foodtypes'),(13,'appaxf','goods'),(11,'appaxf','mainshow'),(9,'appaxf','mustbuy'),(8,'appaxf','nav'),(10,'appaxf','shop'),(15,'appaxf','user'),(7,'appaxf','wheel'),(3,'auth','group'),(2,'auth','permission'),(4,'auth','user'),(5,'contenttypes','contenttype'),(6,'sessions','session');
+INSERT INTO `django_content_type` VALUES (1,'admin','logentry'),(14,'appaxf','cart'),(12,'appaxf','foodtypes'),(13,'appaxf','goods'),(11,'appaxf','mainshow'),(9,'appaxf','mustbuy'),(8,'appaxf','nav'),(17,'appaxf','order'),(16,'appaxf','orderinfo'),(10,'appaxf','shop'),(15,'appaxf','user'),(7,'appaxf','wheel'),(3,'auth','group'),(2,'auth','permission'),(4,'auth','user'),(5,'contenttypes','contenttype'),(6,'sessions','session');
 /*!40000 ALTER TABLE `django_content_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -534,7 +593,7 @@ CREATE TABLE `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -543,7 +602,7 @@ CREATE TABLE `django_migrations` (
 
 LOCK TABLES `django_migrations` WRITE;
 /*!40000 ALTER TABLE `django_migrations` DISABLE KEYS */;
-INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2018-11-01 04:47:08.354776'),(2,'auth','0001_initial','2018-11-01 04:47:09.440907'),(3,'admin','0001_initial','2018-11-01 04:47:09.735334'),(4,'admin','0002_logentry_remove_auto_add','2018-11-01 04:47:09.805315'),(5,'contenttypes','0002_remove_content_type_name','2018-11-01 04:47:09.969797'),(6,'auth','0002_alter_permission_name_max_length','2018-11-01 04:47:10.120678'),(7,'auth','0003_alter_user_email_max_length','2018-11-01 04:47:10.229358'),(8,'auth','0004_alter_user_username_opts','2018-11-01 04:47:10.245004'),(9,'auth','0005_alter_user_last_login_null','2018-11-01 04:47:10.341059'),(10,'auth','0006_require_contenttypes_0002','2018-11-01 04:47:10.348726'),(11,'auth','0007_alter_validators_add_error_messages','2018-11-01 04:47:10.368688'),(12,'auth','0008_alter_user_username_max_length','2018-11-01 04:47:10.478856'),(13,'sessions','0001_initial','2018-11-01 04:47:10.556402'),(14,'appaxf','0001_initial','2018-11-01 04:51:52.004203'),(15,'appaxf','0002_mustbuy','2018-11-01 04:52:36.976560'),(16,'appaxf','0003_shop','2018-11-01 11:12:27.589141'),(17,'appaxf','0004_mainshow','2018-11-01 11:44:13.408544'),(18,'appaxf','0005_foodtypes','2018-11-01 12:10:53.860977'),(19,'appaxf','0006_goods','2018-11-01 12:38:48.759218'),(20,'appaxf','0007_auto_20181102_1137','2018-11-02 03:37:30.742333'),(21,'appaxf','0008_auto_20181102_2003','2018-11-02 12:03:41.852721');
+INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2018-11-01 04:47:08.354776'),(2,'auth','0001_initial','2018-11-01 04:47:09.440907'),(3,'admin','0001_initial','2018-11-01 04:47:09.735334'),(4,'admin','0002_logentry_remove_auto_add','2018-11-01 04:47:09.805315'),(5,'contenttypes','0002_remove_content_type_name','2018-11-01 04:47:09.969797'),(6,'auth','0002_alter_permission_name_max_length','2018-11-01 04:47:10.120678'),(7,'auth','0003_alter_user_email_max_length','2018-11-01 04:47:10.229358'),(8,'auth','0004_alter_user_username_opts','2018-11-01 04:47:10.245004'),(9,'auth','0005_alter_user_last_login_null','2018-11-01 04:47:10.341059'),(10,'auth','0006_require_contenttypes_0002','2018-11-01 04:47:10.348726'),(11,'auth','0007_alter_validators_add_error_messages','2018-11-01 04:47:10.368688'),(12,'auth','0008_alter_user_username_max_length','2018-11-01 04:47:10.478856'),(13,'sessions','0001_initial','2018-11-01 04:47:10.556402'),(14,'appaxf','0001_initial','2018-11-01 04:51:52.004203'),(15,'appaxf','0002_mustbuy','2018-11-01 04:52:36.976560'),(16,'appaxf','0003_shop','2018-11-01 11:12:27.589141'),(17,'appaxf','0004_mainshow','2018-11-01 11:44:13.408544'),(18,'appaxf','0005_foodtypes','2018-11-01 12:10:53.860977'),(19,'appaxf','0006_goods','2018-11-01 12:38:48.759218'),(20,'appaxf','0007_auto_20181102_1137','2018-11-02 03:37:30.742333'),(21,'appaxf','0008_auto_20181102_2003','2018-11-02 12:03:41.852721'),(22,'appaxf','0009_order_orderinfo','2018-11-08 07:57:38.348214');
 /*!40000 ALTER TABLE `django_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -569,7 +628,7 @@ CREATE TABLE `django_session` (
 
 LOCK TABLES `django_session` WRITE;
 /*!40000 ALTER TABLE `django_session` DISABLE KEYS */;
-INSERT INTO `django_session` VALUES ('2fwsyq6cyrabwzhxocb6hx0i0ccl1ox0','NjgxMzJkZmIwODJhNjhmY2Q3OWY4OWZkNzM0MDMxMzBiNzJkNTcwZDp7InVzZXJuYW1lIjoiY2Y1ODIxODUtMzIzNS01NWM4LTk1OGQtZTBiNDU0YjM2OGExIn0=','2018-11-20 07:39:39.641314'),('78r2aqzghlatyhcznsbk8sl9wydb98q8','NmEyZTQ3YzMyZTRjZmMyMDBkYTI4NTljZWUyZmY0YzlkOTQ3OGQyMzp7InVzZXJuYW1lIjoiNGZiZTI1ODMtMTAzNS01ZTBlLTgyMjUtN2Y4OWMyM2EzNWNjIn0=','2018-11-20 09:18:05.548301'),('8etje2zcko3s2vbvwwahnop3p8t0mdqn','NjE3NWFjZjg1MWU0ZGQyZDNiMWFkNmQxN2MzMTVkM2Q2MjdlNGFmYzp7InVzZXJuYW1lIjoiNjA5M2YzNTYtOWI2MC01NzVhLWI5MTMtZGFlNWVjNWViYzE1In0=','2018-11-20 09:09:31.689570'),('8v2g5f5he1lkf9rd5c5j8igqnqa36ig9','YzQ5MmJmYTQyZTRiMmIzMzkzNGQ4YzEwMzgxM2U1NzUwMDJlNjBiNzp7InVzZXJuYW1lIjoiN2NhNDk5ZjItZWIxYi01MzU0LTlhMjEtMmM5MDIyMTRhMDFiIn0=','2018-11-17 02:51:23.874299'),('khztzjp9utmn24dj1yd32xpy7exwemwd','M2NjOTdkZDVjMDY3YThhMTgzZjlkZjU5NDJmZDc1NDk3NDU4ODc4OTp7InVzZXJuYW1lIjoiYjI1YjU0NzAtZDQ4YS01YTM4LTlhNDYtYTdhNDEzOGEwYzUzIn0=','2018-11-19 09:08:37.651059'),('oae288u0k16x6kt6tmzwu2k2lx4072bh','OWYzY2M5ZjE3YjU0YmM4MDE3MjVhZDc4NGIwNDhiMDQ2Y2Q1MTgxNzp7InVzZXJuYW1lIjoiZDZiZmE2OTctNGEzOS01MmY2LWFjZmItYjgyMjQwZjhkNDA4In0=','2018-11-20 09:47:28.488752'),('r6rr4iytvuxp6gy931q8rrmgarvconvk','ZTkyMGFhMGRkMzAxNjRlMzMwZTI2NzA2NTIwYjM1MjNlNDQ5YWQzMDp7InVzZXJuYW1lIjoiOWEyNTU5OWEtMzg3YS01ZWZhLWIxZTYtNjNlYzBiMTg3ZTJjIn0=','2018-11-20 02:03:53.777670'),('tdfpr82blimndpqv54zesjobcyus15hh','MjZiZTA4NTEyNmY1MjBhNTQyNjAyZDZlMDQ5MDcxMTY2NzgxNmQyZTp7InVzZXJuYW1lIjoiMzk3MGU5ZjctMjIzNi01OGRmLWFiNGYtYmQ1MTE2YjA1M2Y4In0=','2018-11-20 03:19:30.203249'),('xhzqxxrpmn0aiufkqdo4y9d5vqzgy7vx','MWJhNzI0YTA2YzNhMzgxYmRlY2VmYWYwNWI4MWNhYjFlYWUyNGRiMzp7InVzZXJuYW1lIjoiMTlmNTg0OGUtODk2NC01MDY1LTkxMzEtM2E0MmE1NjZkYjJmIn0=','2018-11-17 02:43:06.545398');
+INSERT INTO `django_session` VALUES ('0jwb136ueyvqdx2wpcxy0ex14f3hreqr','YjhiNzkxZjA0OWU0NTI2MTAzZTZmYmFhMzg0OWRlYzgyMjlmYmI0NTp7InVzZXJuYW1lIjoiMjhmMmFhZGEtYmQyNS01YTE1LWIxYWUtODVhYTgwZDJiN2ZkIn0=','2018-11-21 12:57:18.415365'),('2fwsyq6cyrabwzhxocb6hx0i0ccl1ox0','NjgxMzJkZmIwODJhNjhmY2Q3OWY4OWZkNzM0MDMxMzBiNzJkNTcwZDp7InVzZXJuYW1lIjoiY2Y1ODIxODUtMzIzNS01NWM4LTk1OGQtZTBiNDU0YjM2OGExIn0=','2018-11-20 07:39:39.641314'),('78r2aqzghlatyhcznsbk8sl9wydb98q8','NmEyZTQ3YzMyZTRjZmMyMDBkYTI4NTljZWUyZmY0YzlkOTQ3OGQyMzp7InVzZXJuYW1lIjoiNGZiZTI1ODMtMTAzNS01ZTBlLTgyMjUtN2Y4OWMyM2EzNWNjIn0=','2018-11-20 09:18:05.548301'),('8d6fca94ni0ckzj4r6duzsb1pvw3kgsk','MDNkN2NiZmRlYzk4ODMyY2IwNGFlZDdiOGFiOWU0YjVlODUyYmI1Nzp7InVzZXJuYW1lIjoiZGIxNGVjNjQtNTA5Mi01NDYyLWE5YjEtZDU2NzE2OWJjMjIyIn0=','2018-11-22 09:34:20.883539'),('8etje2zcko3s2vbvwwahnop3p8t0mdqn','NjE3NWFjZjg1MWU0ZGQyZDNiMWFkNmQxN2MzMTVkM2Q2MjdlNGFmYzp7InVzZXJuYW1lIjoiNjA5M2YzNTYtOWI2MC01NzVhLWI5MTMtZGFlNWVjNWViYzE1In0=','2018-11-20 09:09:31.689570'),('8v2g5f5he1lkf9rd5c5j8igqnqa36ig9','YzQ5MmJmYTQyZTRiMmIzMzkzNGQ4YzEwMzgxM2U1NzUwMDJlNjBiNzp7InVzZXJuYW1lIjoiN2NhNDk5ZjItZWIxYi01MzU0LTlhMjEtMmM5MDIyMTRhMDFiIn0=','2018-11-17 02:51:23.874299'),('khztzjp9utmn24dj1yd32xpy7exwemwd','M2NjOTdkZDVjMDY3YThhMTgzZjlkZjU5NDJmZDc1NDk3NDU4ODc4OTp7InVzZXJuYW1lIjoiYjI1YjU0NzAtZDQ4YS01YTM4LTlhNDYtYTdhNDEzOGEwYzUzIn0=','2018-11-19 09:08:37.651059'),('o8n6845uir2mp0nym0g72bpwibypfxys','M2JmODJiNDNkYTIxZDU4MzU0MmY4YWY5ZDljNDFhOTIzZTA1MmY0Yzp7InVzZXJuYW1lIjoiNjQwNDRmMGQtYTg1NC01NWE3LTllNjktZGIzYmEyOWMzOTE3In0=','2018-11-22 11:16:20.655544'),('oae288u0k16x6kt6tmzwu2k2lx4072bh','OWYzY2M5ZjE3YjU0YmM4MDE3MjVhZDc4NGIwNDhiMDQ2Y2Q1MTgxNzp7InVzZXJuYW1lIjoiZDZiZmE2OTctNGEzOS01MmY2LWFjZmItYjgyMjQwZjhkNDA4In0=','2018-11-20 09:47:28.488752'),('r6rr4iytvuxp6gy931q8rrmgarvconvk','ZTkyMGFhMGRkMzAxNjRlMzMwZTI2NzA2NTIwYjM1MjNlNDQ5YWQzMDp7InVzZXJuYW1lIjoiOWEyNTU5OWEtMzg3YS01ZWZhLWIxZTYtNjNlYzBiMTg3ZTJjIn0=','2018-11-20 02:03:53.777670'),('tdfpr82blimndpqv54zesjobcyus15hh','MjZiZTA4NTEyNmY1MjBhNTQyNjAyZDZlMDQ5MDcxMTY2NzgxNmQyZTp7InVzZXJuYW1lIjoiMzk3MGU5ZjctMjIzNi01OGRmLWFiNGYtYmQ1MTE2YjA1M2Y4In0=','2018-11-20 03:19:30.203249'),('wtt1k7t5cmz5fdi7d3rax0guqgzrczo3','M2I0NDBkNTBhMWNiY2VhYjdhZGFmZGU3ODU0YTcwYTY4NmMzZDMzNTp7InVzZXJuYW1lIjoiMDYwNDM3OTgtNzdhZS01YWMwLTk3ZDMtNWVmNjczNmZlZWMzIn0=','2018-11-21 12:35:06.637817'),('xhzqxxrpmn0aiufkqdo4y9d5vqzgy7vx','MWJhNzI0YTA2YzNhMzgxYmRlY2VmYWYwNWI4MWNhYjFlYWUyNGRiMzp7InVzZXJuYW1lIjoiMTlmNTg0OGUtODk2NC01MDY1LTkxMzEtM2E0MmE1NjZkYjJmIn0=','2018-11-17 02:43:06.545398');
 /*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -582,4 +641,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-07  1:20:56
+-- Dump completed on 2018-11-08  5:40:08
