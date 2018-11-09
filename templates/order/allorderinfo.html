@@ -1,0 +1,184 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block extcss %}
+    <link rel="stylesheet" href="{% static 'order/css/allorderinfo.css' %}">
+{% endblock %}
+
+{% block title %}
+    爱鲜蜂 | 我的全部订单
+{% endblock %}
+
+{% block content %}
+    {#    订单状态(1.未付款 2.已付款未发货 3.已发货未收货 4.已收货未评价 5.已评价 6.退款)#}
+    <div class="orderinfo">
+{#    未付款#}
+    {% for nopaynum in nopaynums %}
+        <h5>订单号:{{ nopaynum.ordernum }}</h5>
+        <ul>
+            {% for orderinfo in nopaynum.orderinfo_set.all %}
+                 <li class="goods">
+                    <div class="confirm-wrapper">
+                        <span><strong>未付款</strong></span>
+                    </div>
+
+                    <div class="content-wrapper">
+                        <div class="img">
+                            <img src="{{ orderinfo.goods.productimg }}">
+                        </div>
+                        <div class="detail">
+                            <p class="name">{{ orderinfo.goods.productlongname }}</p>
+                            <p class="price" attr="{{ orderinfo.goods.price }}">￥{{ orderinfo.goods.price }}</p>
+                            <p class="num" attr="{{ orderinfo.number }}">x{{ orderinfo.number }}</p>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        <button class="btn btn-success" id="pay" orderid="{{ nopaynum.id }}">付 款</button>
+    {% endfor %}
+
+{#    已付款未发货#}
+    {% if nodeliverys.count %}
+        <hr style=" height:2px;border:none;border-top:2px dotted #185598;" />
+    {% endif %}
+    {% for nodelivery in nodeliverys %}
+        <h5>订单号:{{ nodelivery.ordernum }}</h5>
+        <ul>
+            {% for orderinfo in nodelivery.orderinfo_set.all %}
+                 <li class="goods">
+                    <div class="confirm-wrapper">
+                        <span><strong>未发货</strong></span>
+                    </div>
+
+                    <div class="content-wrapper">
+                        <div class="img">
+                            <img src="{{ orderinfo.goods.productimg }}">
+                        </div>
+                        <div class="detail">
+                            <p class="name">{{ orderinfo.goods.productlongname }}</p>
+                            <p class="price" attr="{{ orderinfo.goods.price }}">￥{{ orderinfo.goods.price }}</p>
+                            <p class="num" attr="{{ orderinfo.number }}">x{{ orderinfo.number }}</p>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+{#    已发货未收货#}
+    {% if nogetgoods.count %}
+        <hr style=" height:2px;border:none;border-top:2px dotted #185598;" />
+    {% endif %}
+    {% for nogetgood in nogetgoods %}
+        <h5>订单号:{{ nogetgood.ordernum }}</h5>
+        <ul>
+            {% for orderinfo in nogetgood.orderinfo_set.all %}
+                 <li class="goods">
+                    <div class="confirm-wrapper">
+                        <span><strong>未收货</strong></span>
+                    </div>
+
+                    <div class="content-wrapper">
+                        <div class="img">
+                            <img src="{{ orderinfo.goods.productimg }}">
+                        </div>
+                        <div class="detail">
+                            <p class="name">{{ orderinfo.goods.productlongname }}</p>
+                            <p class="price" attr="{{ orderinfo.goods.price }}">￥{{ orderinfo.goods.price }}</p>
+                            <p class="num" attr="{{ orderinfo.number }}">x{{ orderinfo.number }}</p>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+{#    已收货未评价#}
+    {% if noevaluations.count %}
+         <hr style=" height:2px;border:none;border-top:2px dotted #185598;" />
+    {% endif %}
+    {% for noevaluation in noevaluations %}
+        <h5>订单号:{{ noevaluation.ordernum }}</h5>
+        <ul>
+            {% for orderinfo in noevaluation.orderinfo_set.all %}
+                 <li class="goods">
+                    <div class="confirm-wrapper">
+                        <span><strong>未评价</strong></span>
+                    </div>
+
+                    <div class="content-wrapper">
+                        <div class="img">
+                            <img src="{{ orderinfo.goods.productimg }}">
+                        </div>
+                        <div class="detail">
+                            <p class="name">{{ orderinfo.goods.productlongname }}</p>
+                            <p class="price" attr="{{ orderinfo.goods.price }}">￥{{ orderinfo.goods.price }}</p>
+                            <p class="num" attr="{{ orderinfo.number }}">x{{ orderinfo.number }}</p>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+{#    已评价#}
+    {% if evaluations.count %}
+         <hr style=" height:2px;border:none;border-top:2px dotted #185598;" />
+    {% endif %}
+    {% for evaluation in evaluations %}
+        <h5>订单号:{{ evaluation.ordernum }}</h5>
+        <ul>
+            {% for orderinfo in evaluation.orderinfo_set.all %}
+                 <li class="goods">
+                    <div class="confirm-wrapper">
+                        <span><strong>已评价</strong></span>
+                    </div>
+
+                    <div class="content-wrapper">
+                        <div class="img">
+                            <img src="{{ orderinfo.goods.productimg }}">
+                        </div>
+                        <div class="detail">
+                            <p class="name">{{ orderinfo.goods.productlongname }}</p>
+                            <p class="price" attr="{{ orderinfo.goods.price }}">￥{{ orderinfo.goods.price }}</p>
+                            <p class="num" attr="{{ orderinfo.number }}">x{{ orderinfo.number }}</p>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+{#    退款#}
+    {% if refunds.count %}
+        <hr style=" height:2px;border:none;border-top:2px dotted #185598;"/>
+    {% endif %}
+    {% for refund in refunds %}
+        <h5>订单号:{{ refund.ordernum }}</h5>
+        <ul>
+            {% for orderinfo in refund.orderinfo_set.all %}
+                 <li class="goods">
+                    <div class="confirm-wrapper">
+                        <span><strong>退款</strong></span>
+                    </div>
+
+                    <div class="content-wrapper">
+                        <div class="img">
+                            <img src="{{ orderinfo.goods.productimg }}">
+                        </div>
+                        <div class="detail">
+                            <p class="name">{{ orderinfo.goods.productlongname }}</p>
+                            <p class="price" attr="{{ orderinfo.goods.price }}">￥{{ orderinfo.goods.price }}</p>
+                            <p class="num" attr="{{ orderinfo.number }}">x{{ orderinfo.number }}</p>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+    </div>
+{% endblock %}
+
+{% block extjs %}
+    <script type="text/javascript" src="{% static 'order/js/allorderinfo.js' %}"></script>
+{% endblock %}

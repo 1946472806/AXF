@@ -5,11 +5,12 @@
 {% endblock %}
 
 {% block title %}
-    爱鲜蜂 | 购物车
+    爱鲜蜂 | 我的订单
 {% endblock %}
 
 {% block content %}
     <div class="orderinfo">
+    <h5>订单号:{{ order.ordernum }}</h5>
         <ul>
             {% for orderinfo in order.orderinfo_set.all %}
                  <li class="goods">

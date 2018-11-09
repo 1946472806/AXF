@@ -86,6 +86,7 @@ span,a,dd{
 }
 .mine .other section ul li dl{
     text-align: center;
+    position: relative;
 }
 .mine .other section ul li dl dt{
     width:100%;
@@ -93,6 +94,13 @@ span,a,dd{
 }
 .mine .other section ul li dl dd{
     font-size: 0.9rem;
+}
+.mine .other section ul li dl span{
+    position: absolute;
+    right: 0.3rem;
+    top: 0.1rem;
+    background: red;
+    color: white;
 }
 
 

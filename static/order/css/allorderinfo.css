@@ -3,10 +3,6 @@
     width: 100%;
 }
 
-.orderinfo ul{
-    /*background: lightpink;*/
-    padding-bottom: 1rem;
-}
 .btn-success{
     padding: 0.5rem;
     margin: 0.5rem;
@@ -15,6 +11,11 @@
 
     height: 2rem;
     width: 95%;
+}
+.orderinfo ul{
+    background: #c1e2b3;
+    border-radius: 0.7rem;
+    padding-bottom: 1rem;
 }
 
 .orderinfo ul li{
@@ -26,6 +27,13 @@
     display: flex;
     height: 6rem;
 }
+.cart ul li .confirm-wrapper{
+    width: 10%;
+    line-height: 6rem;
+    text-align: center;
+    position: relative;
+}
+
 .orderinfo ul li .content-wrapper{
     width: 90%;
     display: flex;

@@ -116,10 +116,23 @@ def mine(request):
         data['flag'] = False
     else:
         user = User.objects.filter(token=token).first()
+        # 待付款
+        nopaynum = Order.objects.filter(user=user).filter(status=1).count()
+        #待收货
+        nogetgood = Order.objects.filter(user=user).filter(status=3).count()
+        #待评价
+        noevaluation = Order.objects.filter(user=user).filter(status=4).count()
+        #退款/售后
+        refund = Order.objects.filter(user=user).filter(status=6).count()
+
         data['user'] = user.name
         data['rank'] = user.rank
         data['img'] = '/static/uploads/' + user.img
         data['flag'] = True
+        data['nopaynum'] = nopaynum
+        data['nogetgood'] = nogetgood
+        data['noevaluation'] = noevaluation
+        data['refund'] = refund
     #已登录
     return render(request, 'mine/mine.html',context=data)
 
@@ -301,11 +314,15 @@ def getorderinfo(request):
 
 # 支付完成后，支付宝调用的(通知AXF服务端)
 def notifyurl(request):
+    #这里应该根据返回的状态和单据号更新用户订单表中的订单状态
+    # print('%%%%%%%%%%%%%%%%%%%%%%%%%%%')
+    # print(request.GET.get('subject'))
     return JsonResponse({'msg': 'success'})
 
 # 支付完成后，AXF客户端跳转的页面
 def returnurl(request):
-    return HttpResponse('进行页面跳转，回到axf.....')
+    #这里暂时跳转到‘我的’页面
+    return redirect('appaxf:mine')
 
 #支付宝支付
 def pay(request):
@@ -324,3 +341,34 @@ def pay(request):
     alipay_url = 'https://openapi.alipaydev.com/gateway.do?{data}'.format(data=url)
 
     return JsonResponse({'alipay_url': alipay_url})
+
+#我的全部订单
+def getallorderinfo(request):
+    token = request.session.get('username')
+    data = {}
+    if token:
+        user = User.objects.get(token=token)
+
+        # 订单状态(1.未付款 2.已付款未发货 3.已发货未收货 4.已收货未评价 5.已评价 6.退款)
+        # 未付款
+        nopaynums = Order.objects.filter(user=user).filter(status=1)
+        #已付款未发货
+        nodeliverys = Order.objects.filter(user=user).filter(status=2)
+        # 已发货未收货
+        nogetgoods = Order.objects.filter(user=user).filter(status=3)
+        # 已收货未评价
+        noevaluations = Order.objects.filter(user=user).filter(status=4)
+        #已评价
+        evaluations = Order.objects.filter(user=user).filter(status=5)
+        # 退款/售后
+        refunds = Order.objects.filter(user=user).filter(status=6)
+
+        data['nopaynums'] = nopaynums
+        data['nodeliverys'] = nodeliverys
+        data['nogetgoods'] = nogetgoods
+        data['noevaluations'] = noevaluations
+        data['evaluations'] = evaluations
+        data['refunds'] = refunds
+        return render(request, 'order/allorderinfo.html', context=data)
+    else:
+        return redirect('appaxf:login')

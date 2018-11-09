@@ -76,3 +76,401 @@ Traceback (most recent call last):
     "returned None instead." % (callback.__module__, view_name)
 ValueError: The view appaxf.views.notifyurl didn't return an HttpResponse object. It returned None instead.
 [pid: 2876|app: 0|req: 12/16] 140.205.118.231 () {34 vars in 498 bytes} [Thu Nov  8 21:52:03 2018] POST /axf/notifyurl/ => generated 52655 bytes in 29 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+[pid: 2876|app: 0|req: 13/17] 113.87.162.199 () {44 vars in 751 bytes} [Thu Nov  8 21:52:57 2018] GET /axf/ => generated 22297 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 2)
+[pid: 2876|app: 0|req: 14/18] 113.88.15.38 () {44 vars in 777 bytes} [Thu Nov  8 21:53:06 2018] GET /axf/ => generated 22297 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 3)
+[pid: 2876|app: 0|req: 15/19] 113.88.15.38 () {44 vars in 798 bytes} [Thu Nov  8 21:53:07 2018] GET /axf/mine/ => generated 4375 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 2876|app: 0|req: 16/20] 113.88.15.38 () {44 vars in 829 bytes} [Thu Nov  8 21:53:09 2018] GET /axf/market/104749/0/0/ => generated 9871 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 2876|app: 0|req: 17/21] 113.88.15.38 () {44 vars in 816 bytes} [Thu Nov  8 21:53:11 2018] GET /axf/cart/ => generated 2940 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 2)
+[pid: 2876|app: 0|req: 18/22] 113.88.15.38 () {44 vars in 829 bytes} [Thu Nov  8 21:53:12 2018] GET /axf/market/104749/0/0/ => generated 9871 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 3)
+[pid: 2876|app: 0|req: 19/23] 113.88.15.38 () {44 vars in 855 bytes} [Thu Nov  8 21:53:14 2018] GET /axf/market/103532/0/0/ => generated 40732 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+[pid: 2876|app: 0|req: 20/24] 113.88.15.38 () {44 vars in 782 bytes} [Thu Nov  8 21:53:16 2018] GET /axf/addcarts/?goodsid=531 => generated 80 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 2876|app: 0|req: 21/25] 113.88.15.38 () {44 vars in 782 bytes} [Thu Nov  8 21:53:17 2018] GET /axf/addcarts/?goodsid=532 => generated 80 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 2)
+[pid: 2876|app: 0|req: 22/26] 113.88.15.38 () {44 vars in 782 bytes} [Thu Nov  8 21:53:18 2018] GET /axf/addcarts/?goodsid=531 => generated 80 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 3)
+[pid: 2876|app: 0|req: 23/27] 113.88.15.38 () {44 vars in 829 bytes} [Thu Nov  8 21:53:19 2018] GET /axf/cart/ => generated 4626 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+#######################################
+[pid: 2876|app: 0|req: 24/28] 113.87.162.199 () {44 vars in 771 bytes} [Thu Nov  8 21:53:22 2018] GET /axf/placeorder/?test=1111 => generated 112 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 115 bytes (1 switches on core 0)
+[pid: 2876|app: 0|req: 25/29] 113.87.162.199 () {44 vars in 925 bytes} [Thu Nov  8 21:53:22 2018] GET /axf/getorderinfo/?ordernum=0534ab28-1892-57a6-84d0-146de86c19b3 => generated 2453 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 2)
+[pid: 2876|app: 0|req: 26/30] 113.87.162.199 () {44 vars in 811 bytes} [Thu Nov  8 21:53:24 2018] GET /axf/pay/?orderid=9 => generated 881 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 101 bytes (1 switches on core 3)
+Internal Server Error: /axf/notifyurl/
+Traceback (most recent call last):
+  File "/root/.virtualenvs/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/root/.virtualenvs/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view appaxf.views.notifyurl didn't return an HttpResponse object. It returned None instead.
+[pid: 2876|app: 0|req: 27/31] 140.205.118.111 () {34 vars in 498 bytes} [Thu Nov  8 21:54:22 2018] POST /axf/notifyurl/ => generated 52655 bytes in 29 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 1)
+Internal Server Error: /axf/returnurl/
+Traceback (most recent call last):
+  File "/root/.virtualenvs/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/root/.virtualenvs/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view appaxf.views.returnurl didn't return an HttpResponse object. It returned None instead.
+[pid: 2876|app: 0|req: 28/32] 113.88.15.38 () {42 vars in 2037 bytes} [Thu Nov  8 21:54:32 2018] GET /axf/returnurl/?charset=utf-8&out_trade_no=9&method=alipay.trade.page.pay.return&total_amount=1.10&sign=EgrDnyd8MZ03zsOXRpnFDQWFWKaIGbguqb3xeXAC9X%2B%2F1dvjSR013ATso71PRAywhG3liwaFUrPF8cWbGLA3sk0of7vH8%2FG4xsqLZEfFi4SgEIZs00T2YKBzPdavB5G5ncTDjfIH9ETWuREQoZUbvTgicfiI3itgvAN9sJfwmt%2BShBW60Ewiy81ZmHTkYI8R4wPot2XNUNreLkxvJ2PQtQrsUewKT%2FSuiZVq5M%2BrObdKs21S%2Bn%2FQ%2F45gggc6Th7PxhzMgaRaUyYCzKxP1rqI6z%2FvaU%2BPSKXR9SkCF26kGYiCqZXPIGAe5G1ONSrTM4Lt6eU3nLMjEMTH%2F8wAIqfoag%3D%3D&trade_no=2018110822001438720500749248&auth_app_id=2016091900547441&version=1.0&app_id=2016091900547441&sign_type=RSA2&seller_id=2088102176328329&timestamp=2018-11-08+21%3A54%3A28 => generated 56237 bytes in 33 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+Thu Nov  8 21:55:54 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Thu Nov  8 21:55:54 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Thu Nov  8 21:55:54 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Thu Nov  8 21:55:54 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Thu Nov  8 21:55:54 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Thu Nov  8 21:55:54 2018 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Thu Nov  8 21:55:54 2018 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Thu Nov  8 21:55:54 2018 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17.1 (64bit) on [Thu Nov  8 21:56:12 2018] ***
+compiled with version: 5.4.0 20160609 on 07 November 2018 09:51:19
+os: Linux-4.4.0-117-generic #141-Ubuntu SMP Tue Mar 13 11:58:07 UTC 2018
+nodename: iZwz988rg4xz5p4nur3db0Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/AXF
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenvs/python3/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/AXF
+your processes number limit is 3824
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8000 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.7 (default, Oct 25 2018, 09:16:13)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x19d2d30
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 521120 bytes (508 KB) for 16 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x19d2d30 pid: 2903 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2903)
+spawned uWSGI worker 1 (pid: 2905, cores: 4)
+spawned uWSGI worker 2 (pid: 2906, cores: 4)
+spawned uWSGI worker 3 (pid: 2907, cores: 4)
+spawned uWSGI worker 4 (pid: 2908, cores: 4)
+[pid: 2908|app: 0|req: 1/1] 113.88.15.38 () {42 vars in 710 bytes} [Thu Nov  8 21:56:54 2018] GET /axf/ => generated 22297 bytes in 261 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 2905|app: 0|req: 1/2] 113.88.15.38 () {40 vars in 689 bytes} [Thu Nov  8 21:56:55 2018] GET /favicon.ico => generated 2064 bytes in 217 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 2905|app: 0|req: 2/3] 113.88.15.38 () {40 vars in 689 bytes} [Thu Nov  8 21:57:01 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 2905|app: 0|req: 3/4] 113.88.15.38 () {44 vars in 741 bytes} [Thu Nov  8 21:57:03 2018] GET /axf/ => generated 22297 bytes in 38 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 2)
+Not Found: /favicon.ico
+[pid: 2905|app: 0|req: 4/5] 113.88.15.38 () {42 vars in 720 bytes} [Thu Nov  8 21:57:05 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 3)
+[pid: 2905|app: 0|req: 5/6] 113.88.15.38 () {44 vars in 762 bytes} [Thu Nov  8 21:57:06 2018] GET /axf/mine/ => generated 4286 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 195 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 2905|app: 0|req: 6/7] 113.87.162.199 () {38 vars in 634 bytes} [Thu Nov  8 21:57:06 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 2905|app: 0|req: 7/8] 113.87.162.199 () {42 vars in 714 bytes} [Thu Nov  8 21:57:08 2018] GET /axf/login/ => generated 2853 bytes in 4 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 2)
+Not Found: /favicon.ico
+[pid: 2905|app: 0|req: 8/9] 113.87.162.199 () {38 vars in 634 bytes} [Thu Nov  8 21:57:08 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 3)
+[pid: 2908|app: 0|req: 2/10] 113.87.162.199 () {46 vars in 940 bytes} [Thu Nov  8 21:57:19 2018] POST /axf/login/ => generated 0 bytes in 17 msecs (HTTP/1.1 302) 6 headers in 277 bytes (1 switches on core 2)
+[pid: 2905|app: 0|req: 9/11] 113.87.162.199 () {44 vars in 770 bytes} [Thu Nov  8 21:57:19 2018] GET /axf/mine/ => generated 4375 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 2905|app: 0|req: 10/12] 113.87.162.199 () {40 vars in 691 bytes} [Thu Nov  8 21:57:19 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 2905|app: 0|req: 11/13] 113.87.162.199 () {44 vars in 795 bytes} [Thu Nov  8 21:57:22 2018] GET /axf/market/104749/0/0/ => generated 10081 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 2)
+Not Found: /favicon.ico
+[pid: 2905|app: 0|req: 12/14] 113.87.162.199 () {40 vars in 691 bytes} [Thu Nov  8 21:57:23 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 3)
+[pid: 2905|app: 0|req: 13/15] 113.87.162.199 () {44 vars in 757 bytes} [Thu Nov  8 21:57:24 2018] GET /axf/addcarts/?goodsid=495 => generated 80 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 2905|app: 0|req: 14/16] 113.87.162.199 () {44 vars in 757 bytes} [Thu Nov  8 21:57:25 2018] GET /axf/addcarts/?goodsid=496 => generated 80 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 1)
+[pid: 2905|app: 0|req: 15/17] 113.87.162.199 () {44 vars in 757 bytes} [Thu Nov  8 21:57:26 2018] GET /axf/addcarts/?goodsid=495 => generated 80 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 2)
+[pid: 2905|app: 0|req: 16/18] 113.87.162.199 () {44 vars in 782 bytes} [Thu Nov  8 21:57:27 2018] GET /axf/cart/ => generated 5455 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 3)
+Not Found: /favicon.ico
+[pid: 2905|app: 0|req: 17/19] 113.88.15.38 () {40 vars in 689 bytes} [Thu Nov  8 21:57:28 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2905|app: 0|req: 18/20] 113.88.15.38 () {44 vars in 742 bytes} [Thu Nov  8 21:57:30 2018] GET /axf/placeorder/?test=1111 => generated 112 bytes in 25 msecs (HTTP/1.1 200) 4 headers in 115 bytes (1 switches on core 1)
+[pid: 2905|app: 0|req: 19/21] 113.88.15.38 () {44 vars in 874 bytes} [Thu Nov  8 21:57:30 2018] GET /axf/getorderinfo/?ordernum=3bae3e14-fd21-5ff8-8707-4f5f41d64f74 => generated 3074 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 2)
+Not Found: /favicon.ico
+[pid: 2905|app: 0|req: 20/22] 113.88.15.38 () {40 vars in 689 bytes} [Thu Nov  8 21:57:31 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 3)
+[pid: 2905|app: 0|req: 21/23] 113.88.15.38 () {44 vars in 784 bytes} [Thu Nov  8 21:57:34 2018] GET /axf/pay/?orderid=10 => generated 870 bytes in 6 msecs (HTTP/1.1 200) 3 headers in 101 bytes (1 switches on core 0)
+[pid: 2905|app: 0|req: 22/24] 140.205.118.67 () {34 vars in 497 bytes} [Thu Nov  8 21:58:18 2018] POST /axf/notifyurl/ => generated 18 bytes in 0 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 2907|app: 0|req: 1/25] 140.205.118.155 () {34 vars in 498 bytes} [Thu Nov  8 21:58:24 2018] POST /axf/notifyurl/ => generated 18 bytes in 216 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 2905|app: 0|req: 23/26] 113.88.15.38 () {42 vars in 2031 bytes} [Thu Nov  8 21:58:29 2018] GET /axf/returnurl/?charset=utf-8&out_trade_no=10&method=alipay.trade.page.pay.return&total_amount=1.10&sign=SE10AtlSxRQVt4ufMRKiBmDrePX%2FNjDWkY5GF6jOI%2FExCF5M4jVR8G6zYe7dTf0TlF%2FWtsGC9N2Jb0FUtcIDhyv1eM%2BJP2Pi3vuwLw%2F%2B3D6t%2Fj9sQEK3DxpZm9kytl7Rz0Q%2Fv4f4r8NUgivMmWgIjC9%2FcrhcMvP4FVtrXh0tD1mu%2BtrHobcZ%2BXA99Usehk2DP811o9duTWW6HO95GYOT9pKuRvOf5z3D%2FtIBLf54jLFtA9kTSeA7cWh6VWR6VZnbKqYUTto50bz5TVYFcu%2FSxRjo8sFqqah%2B0n5Ya5BLlxuRcf2XxCdd0nPmZH74Zy2C%2Ff4yqr4I%2BxG%2FUyfdtowsCA%3D%3D&trade_no=2018110822001438720500749527&auth_app_id=2016091900547441&version=1.0&app_id=2016091900547441&sign_type=RSA2&seller_id=2088102176328329&timestamp=2018-11-08+21%3A58%3A26 => generated 35 bytes in 0 msecs (HTTP/1.1 200) 3 headers in 108 bytes (1 switches on core 1)
+Not Found: /favicon.ico
+[pid: 2906|app: 0|req: 1/27] 113.88.15.38 () {40 vars in 689 bytes} [Thu Nov  8 21:58:29 2018] GET /favicon.ico => generated 2064 bytes in 227 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 2905|app: 0|req: 24/28] 140.205.118.182 () {34 vars in 498 bytes} [Thu Nov  8 22:02:25 2018] POST /axf/notifyurl/ => generated 18 bytes in 0 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 2905|app: 0|req: 25/29] 223.104.63.171 () {42 vars in 765 bytes} [Thu Nov  8 22:09:46 2018] GET /axf/ => generated 22297 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 1)
+Not Found: /favicon.ico
+[pid: 2905|app: 0|req: 26/30] 223.104.63.171 () {40 vars in 697 bytes} [Thu Nov  8 22:09:48 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 2)
+[pid: 2905|app: 0|req: 27/31] 223.104.63.171 () {44 vars in 843 bytes} [Thu Nov  8 22:10:01 2018] GET /axf/market/104749/0/0/ => generated 16926 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 196 bytes (1 switches on core 3)
+Not Found: /favicon.ico
+[pid: 2906|app: 0|req: 2/32] 223.104.63.171 () {42 vars in 714 bytes} [Thu Nov  8 22:10:02 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 2906|app: 0|req: 3/33] 223.104.63.171 () {44 vars in 791 bytes} [Thu Nov  8 22:10:05 2018] GET /axf/cart/ => generated 0 bytes in 11 msecs (HTTP/1.1 302) 5 headers in 147 bytes (1 switches on core 2)
+[pid: 2906|app: 0|req: 4/34] 223.104.63.171 () {44 vars in 793 bytes} [Thu Nov  8 22:10:05 2018] GET /axf/login/ => generated 2853 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 3)
+[pid: 2905|app: 0|req: 28/35] 223.104.63.171 () {52 vars in 1035 bytes} [Thu Nov  8 22:10:47 2018] POST /axf/login/ => generated 0 bytes in 14 msecs (HTTP/1.1 302) 6 headers in 277 bytes (1 switches on core 0)
+[pid: 2905|app: 0|req: 29/36] 223.104.63.171 () {46 vars in 854 bytes} [Thu Nov  8 22:10:47 2018] GET /axf/mine/ => generated 4375 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 2905|app: 0|req: 30/37] 223.104.63.171 () {44 vars in 822 bytes} [Thu Nov  8 22:10:52 2018] GET /axf/cart/ => generated 3771 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 2)
+Not Found: /changesel/
+[pid: 2905|app: 0|req: 31/38] 223.104.63.171 () {44 vars in 776 bytes} [Thu Nov  8 22:10:58 2018] GET /changesel/?cartid=17 => generated 2071 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 3)
+Not Found: /changesel/
+[pid: 2905|app: 0|req: 32/39] 223.104.63.171 () {44 vars in 776 bytes} [Thu Nov  8 22:11:00 2018] GET /changesel/?cartid=17 => generated 2071 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /changesel/
+[pid: 2905|app: 0|req: 33/40] 223.104.63.171 () {44 vars in 776 bytes} [Thu Nov  8 22:11:01 2018] GET /changesel/?cartid=17 => generated 2071 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 2908|app: 0|req: 3/41] 223.104.63.171 () {44 vars in 848 bytes} [Thu Nov  8 22:11:07 2018] GET /axf/market/104749/0/0/ => generated 18046 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 3)
+[pid: 2905|app: 0|req: 34/42] 223.104.63.171 () {44 vars in 799 bytes} [Thu Nov  8 22:11:11 2018] GET /axf/addcarts/?goodsid=487 => generated 80 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 2)
+[pid: 2905|app: 0|req: 35/43] 223.104.63.171 () {44 vars in 799 bytes} [Thu Nov  8 22:11:13 2018] GET /axf/addcarts/?goodsid=488 => generated 80 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 3)
+[pid: 2905|app: 0|req: 36/44] 223.104.63.171 () {44 vars in 835 bytes} [Thu Nov  8 22:11:15 2018] GET /axf/cart/ => generated 5460 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 2905|app: 0|req: 37/45] 223.104.63.171 () {44 vars in 782 bytes} [Thu Nov  8 22:11:17 2018] GET /axf/changesel/?cartid=8 => generated 79 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 2905|app: 0|req: 38/46] 223.104.63.171 () {44 vars in 786 bytes} [Thu Nov  8 22:11:22 2018] GET /axf/placeorder/?test=1111 => generated 112 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 115 bytes (1 switches on core 2)
+[pid: 2905|app: 0|req: 39/47] 223.104.63.171 () {44 vars in 929 bytes} [Thu Nov  8 22:11:22 2018] GET /axf/getorderinfo/?ordernum=1e7d459b-7479-50b9-8576-38c9f12fcc9c => generated 3100 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 3)
+[pid: 2905|app: 0|req: 40/48] 223.104.63.171 () {44 vars in 876 bytes} [Thu Nov  8 22:15:39 2018] GET /axf/home/ => generated 22297 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 2905|app: 0|req: 41/49] 223.104.63.171 () {44 vars in 848 bytes} [Thu Nov  8 22:16:09 2018] GET /axf/market/104749/0/0/ => generated 18046 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+[pid: 2905|app: 0|req: 42/50] 223.104.63.171 () {44 vars in 835 bytes} [Thu Nov  8 22:16:13 2018] GET /axf/cart/ => generated 3771 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 2)
+[pid: 2905|app: 0|req: 43/51] 223.104.63.171 () {44 vars in 822 bytes} [Thu Nov  8 22:16:15 2018] GET /axf/mine/ => generated 4375 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 3)
+[pid: 2905|app: 0|req: 44/52] 223.104.63.171 () {44 vars in 822 bytes} [Thu Nov  8 22:19:01 2018] GET /axf/cart/ => generated 3771 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 2905|app: 0|req: 45/53] 223.104.63.171 () {44 vars in 848 bytes} [Thu Nov  8 22:19:03 2018] GET /axf/market/104749/0/0/ => generated 18046 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+[pid: 2905|app: 0|req: 46/54] 223.104.63.171 () {44 vars in 835 bytes} [Thu Nov  8 22:19:04 2018] GET /axf/home/ => generated 22297 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 2)
+[pid: 2905|app: 0|req: 47/55] 223.104.63.171 () {44 vars in 848 bytes} [Thu Nov  8 22:19:06 2018] GET /axf/market/104749/0/0/ => generated 18046 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 3)
+[pid: 2905|app: 0|req: 48/56] 223.104.63.171 () {44 vars in 861 bytes} [Thu Nov  8 22:19:09 2018] GET /axf/market/103536/0/0/ => generated 79434 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 2905|app: 0|req: 49/57] 223.104.63.171 () {44 vars in 861 bytes} [Thu Nov  8 22:19:12 2018] GET /axf/market/103581/0/0/ => generated 27422 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+[pid: 2905|app: 0|req: 50/58] 223.104.63.171 () {44 vars in 861 bytes} [Thu Nov  8 22:19:15 2018] GET /axf/market/103541/0/0/ => generated 443217 bytes in 97 msecs (HTTP/1.1 200) 4 headers in 126 bytes (1 switches on core 2)
+[pid: 2905|app: 0|req: 51/59] 223.104.63.171 () {44 vars in 861 bytes} [Thu Nov  8 22:19:22 2018] GET /axf/market/103536/0/0/ => generated 79434 bytes in 31 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 3)
+[pid: 2905|app: 0|req: 52/60] 223.104.63.171 () {44 vars in 871 bytes} [Thu Nov  8 22:19:27 2018] GET /axf/market/103536/103537/0/ => generated 47322 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 2905|app: 0|req: 53/61] 223.104.63.171 () {44 vars in 866 bytes} [Thu Nov  8 22:19:32 2018] GET /axf/market/103581/0/0/ => generated 27422 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+[pid: 2905|app: 0|req: 54/62] 223.104.63.171 () {44 vars in 835 bytes} [Thu Nov  8 22:19:34 2018] GET /axf/home/ => generated 22297 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 2)
+[pid: 2905|app: 0|req: 55/63] 223.104.63.171 () {44 vars in 848 bytes} [Thu Nov  8 22:19:36 2018] GET /axf/market/104749/0/0/ => generated 27422 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 3)
+[pid: 2905|app: 0|req: 56/64] 223.104.63.171 () {44 vars in 835 bytes} [Thu Nov  8 22:19:42 2018] GET /axf/home/ => generated 22297 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 2905|app: 0|req: 57/65] 223.104.63.171 () {44 vars in 848 bytes} [Thu Nov  8 22:19:43 2018] GET /axf/market/104749/0/0/ => generated 27422 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+[pid: 2905|app: 0|req: 58/66] 223.104.63.171 () {44 vars in 835 bytes} [Thu Nov  8 22:20:03 2018] GET /axf/cart/ => generated 3771 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 2)
+Not Found: /favicon.ico
+[pid: 2905|app: 0|req: 59/67] 223.104.63.171 () {40 vars in 702 bytes} [Thu Nov  8 22:20:04 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 3)
+[pid: 2905|app: 0|req: 60/68] 223.104.63.171 () {44 vars in 822 bytes} [Thu Nov  8 22:20:06 2018] GET /axf/mine/ => generated 4375 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 2905|app: 0|req: 61/69] 223.104.63.171 () {42 vars in 745 bytes} [Thu Nov  8 22:20:06 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 2905|app: 0|req: 62/70] 223.104.63.171 () {44 vars in 822 bytes} [Thu Nov  8 22:21:24 2018] GET /axf/home/ => generated 22297 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 2)
+[pid: 2905|app: 0|req: 63/71] 223.104.63.171 () {44 vars in 822 bytes} [Thu Nov  8 22:21:28 2018] GET /axf/mine/ => generated 4375 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 3)
+[pid: 2905|app: 0|req: 64/72] 223.104.63.171 () {44 vars in 830 bytes} [Thu Nov  8 22:21:42 2018] GET /axf/loginout/ => generated 0 bytes in 7 msecs (HTTP/1.1 302) 5 headers in 217 bytes (1 switches on core 0)
+[pid: 2905|app: 0|req: 65/73] 223.104.63.171 () {44 vars in 778 bytes} [Thu Nov  8 22:21:43 2018] GET /axf/mine/ => generated 4286 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 2905|app: 0|req: 66/74] 223.104.63.171 () {44 vars in 778 bytes} [Thu Nov  8 22:21:49 2018] GET /axf/home/ => generated 22297 bytes in 23 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 2)
+[pid: 2905|app: 0|req: 67/75] 223.104.63.171 () {44 vars in 804 bytes} [Thu Nov  8 22:21:51 2018] GET /axf/market/104749/0/0/ => generated 25462 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 3)
+[pid: 2905|app: 0|req: 68/76] 223.104.63.171 () {44 vars in 791 bytes} [Thu Nov  8 22:21:54 2018] GET /axf/cart/ => generated 0 bytes in 1 msecs (HTTP/1.1 302) 5 headers in 147 bytes (1 switches on core 0)
+[pid: 2906|app: 0|req: 5/77] 223.104.63.171 () {44 vars in 793 bytes} [Thu Nov  8 22:21:54 2018] GET /axf/login/ => generated 2853 bytes in 4 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 2906|app: 0|req: 6/78] 223.104.63.171 () {44 vars in 805 bytes} [Thu Nov  8 22:21:56 2018] GET /axf/market/104749/0/0/ => generated 25462 bytes in 25 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+[pid: 2906|app: 0|req: 7/79] 223.104.63.171 () {44 vars in 755 bytes} [Thu Nov  8 22:21:58 2018] GET /axf/addcarts/?goodsid=474 => generated 62 bytes in 1 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 2)
+[pid: 2907|app: 0|req: 2/80] 223.104.63.171 () {44 vars in 793 bytes} [Thu Nov  8 22:21:58 2018] GET /axf/login/ => generated 2853 bytes in 22 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 3)
+[pid: 2906|app: 0|req: 8/81] 223.104.63.171 () {44 vars in 804 bytes} [Thu Nov  8 22:22:32 2018] GET /axf/market/104749/0/0/ => generated 25462 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 2)
+[pid: 2905|app: 0|req: 69/82] 223.104.63.171 () {44 vars in 778 bytes} [Thu Nov  8 22:22:32 2018] GET /axf/cart/ => generated 0 bytes in 0 msecs (HTTP/1.1 302) 5 headers in 147 bytes (1 switches on core 0)
+[pid: 2906|app: 0|req: 9/83] 223.104.63.171 () {44 vars in 779 bytes} [Thu Nov  8 22:22:32 2018] GET /axf/mine/ => generated 4286 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 2906|app: 0|req: 10/84] 223.104.63.171 () {44 vars in 793 bytes} [Thu Nov  8 22:22:33 2018] GET /axf/login/ => generated 2853 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 1)
+[pid: 2906|app: 0|req: 11/85] 223.104.63.171 () {44 vars in 799 bytes} [Thu Nov  8 22:22:33 2018] GET /axf/market/104749/0/0/ => generated 25462 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 3)
+[pid: 2906|app: 0|req: 12/86] 223.104.63.171 () {42 vars in 721 bytes} [Thu Nov  8 22:22:33 2018] GET /axf/ => generated 22297 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 2)
+Not Found: /cache/global/img/gs.gif
+[pid: 2905|app: 0|req: 70/87] 80.82.70.187 () {32 vars in 414 bytes} [Thu Nov  8 22:38:17 2018] GET /cache/global/img/gs.gif => generated 2099 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /azenv.php
+[pid: 2905|app: 0|req: 71/88] 95.213.177.126 () {40 vars in 689 bytes} [Thu Nov  8 22:40:38 2018] POST /azenv.php?auth=154168803857&a=PSCN&i=2018418809&p=80 => generated 2120 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 3)
+Not Found: /
+[pid: 2905|app: 0|req: 72/89] 88.231.44.195 () {32 vars in 445 bytes} [Thu Nov  8 23:17:28 2018] GET / => generated 2016 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+Not Found: /
+[pid: 2905|app: 0|req: 73/90] 71.6.202.204 () {34 vars in 374 bytes} [Thu Nov  8 23:32:07 2018] GET / => generated 2013 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 2)
+Not Found: /
+[pid: 2905|app: 0|req: 74/91] 65.38.83.7 () {28 vars in 279 bytes} [Fri Nov  9 00:01:36 2018] GET / => generated 2006 bytes in 4 msecs (HTTP/1.0 404) 3 headers in 102 bytes (1 switches on core 0)
+Invalid HTTP_HOST header: ''. The domain name provided is not valid according to RFC 1034/1035.
+[pid: 2905|app: 0|req: 75/92] 47.97.16.6 () {26 vars in 259 bytes} [Fri Nov  9 00:12:53 2018] GET / => generated 55141 bytes in 47 msecs (HTTP/1.0 400) 1 headers in 53 bytes (1 switches on core 3)
+Not Found: /
+[pid: 2905|app: 0|req: 76/93] 37.221.143.39 () {32 vars in 452 bytes} [Fri Nov  9 00:41:55 2018] GET / => generated 2016 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+Not Found: /
+[pid: 2905|app: 0|req: 77/94] 170.84.104.99 () {32 vars in 446 bytes} [Fri Nov  9 00:43:27 2018] GET / => generated 2016 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 2)
+Not Found: /
+[pid: 2905|app: 0|req: 78/95] 177.201.255.126 () {32 vars in 447 bytes} [Fri Nov  9 00:54:28 2018] GET / => generated 2016 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /off
+[pid: 2905|app: 0|req: 79/96] 198.167.223.52 () {36 vars in 563 bytes} [Fri Nov  9 01:25:21 2018] GET /off => generated 2040 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 3)
+Not Found: /
+[pid: 2905|app: 0|req: 80/97] 93.170.114.251 () {36 vars in 545 bytes} [Fri Nov  9 01:45:29 2018] GET / => generated 2013 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+Not Found: /
+[pid: 2905|app: 0|req: 81/98] 120.55.81.217 () {32 vars in 349 bytes} [Fri Nov  9 01:48:10 2018] GET / => generated 2017 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 2)
+Invalid HTTP_HOST header: ''. The domain name provided is not valid according to RFC 1034/1035.
+[pid: 2905|app: 0|req: 82/99] 125.64.94.201 () {26 vars in 262 bytes} [Fri Nov  9 01:50:38 2018] GET / => generated 55144 bytes in 32 msecs (HTTP/1.0 400) 1 headers in 53 bytes (1 switches on core 0)
+Not Found: /
+[pid: 2905|app: 0|req: 83/100] 201.220.147.93 () {32 vars in 446 bytes} [Fri Nov  9 01:57:18 2018] GET / => generated 2016 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 3)
+Not Found: /
+[pid: 2905|app: 0|req: 84/101] 121.196.232.100 () {32 vars in 350 bytes} [Fri Nov  9 02:23:58 2018] GET / => generated 2016 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+Not Found: /
+[pid: 2905|app: 0|req: 85/102] 189.78.254.21 () {32 vars in 452 bytes} [Fri Nov  9 04:21:38 2018] GET / => generated 2016 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 2)
+Not Found: /
+[pid: 2905|app: 0|req: 86/103] 177.105.227.104 () {32 vars in 448 bytes} [Fri Nov  9 04:41:56 2018] GET / => generated 2016 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /
+[pid: 2905|app: 0|req: 87/104] 201.42.20.124 () {32 vars in 445 bytes} [Fri Nov  9 05:01:09 2018] GET / => generated 2016 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 3)
+Not Found: /404/search_children.js
+[pid: 2905|app: 0|req: 88/105] 120.132.3.65 () {34 vars in 493 bytes} [Fri Nov  9 06:37:43 2018] GET /404/search_children.js => generated 2093 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+Not Found: /
+[pid: 2905|app: 0|req: 89/106] 109.201.202.25 () {28 vars in 290 bytes} [Fri Nov  9 06:53:17 2018] GET / => generated 2013 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 2)
+Not Found: /
+[pid: 2905|app: 0|req: 90/107] 179.33.187.218 () {32 vars in 453 bytes} [Fri Nov  9 07:09:02 2018] GET / => generated 2016 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /
+[pid: 2905|app: 0|req: 91/108] 89.46.238.226 () {32 vars in 446 bytes} [Fri Nov  9 08:21:51 2018] GET / => generated 2016 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 3)
+Not Found: /
+[pid: 2905|app: 0|req: 92/109] 85.97.200.85 () {32 vars in 444 bytes} [Fri Nov  9 08:42:02 2018] GET / => generated 2016 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+Not Found: /cache/global/img/gs.gif
+[pid: 2905|app: 0|req: 93/110] 80.82.78.50 () {32 vars in 413 bytes} [Fri Nov  9 08:48:47 2018] GET /cache/global/img/gs.gif => generated 2099 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 2)
+Not Found: /cache/global/img/gs.gif
+[pid: 2905|app: 0|req: 94/111] 80.82.70.187 () {32 vars in 414 bytes} [Fri Nov  9 08:54:30 2018] GET /cache/global/img/gs.gif => generated 2099 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /
+[pid: 2905|app: 0|req: 95/112] 58.64.7.26 () {28 vars in 286 bytes} [Fri Nov  9 10:04:54 2018] GET / => generated 2013 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 3)
+Fri Nov  9 11:39:40 2018 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.17.1 (64bit) on [Fri Nov  9 11:43:33 2018] ***
+compiled with version: 5.4.0 20160609 on 07 November 2018 09:51:19
+os: Linux-4.4.0-117-generic #141-Ubuntu SMP Tue Mar 13 11:58:07 UTC 2018
+nodename: iZwz988rg4xz5p4nur3db0Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/AXF
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenvs/python3/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/AXF
+your processes number limit is 3824
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8000 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.7 (default, Oct 25 2018, 09:16:13)  [GCC 5.4.0 20160609]
+Python main interpreter initialized at 0x179dd30
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 521120 bytes (508 KB) for 16 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x179dd30 pid: 3532 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 3532)
+spawned uWSGI worker 1 (pid: 3534, cores: 4)
+spawned uWSGI worker 2 (pid: 3535, cores: 4)
+spawned uWSGI worker 3 (pid: 3536, cores: 4)
+spawned uWSGI worker 4 (pid: 3537, cores: 4)
+[pid: 3534|app: 0|req: 1/1] 113.88.15.38 () {40 vars in 653 bytes} [Fri Nov  9 11:45:02 2018] GET /axf/ => generated 22297 bytes in 249 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 2/2] 113.87.162.199 () {38 vars in 634 bytes} [Fri Nov  9 11:45:07 2018] GET /favicon.ico => generated 2064 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 3)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 3/3] 113.87.162.199 () {38 vars in 634 bytes} [Fri Nov  9 11:45:12 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 3534|app: 0|req: 4/4] 113.87.162.199 () {42 vars in 686 bytes} [Fri Nov  9 11:45:15 2018] GET /axf/ => generated 22297 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 2)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 5/5] 113.87.162.199 () {40 vars in 665 bytes} [Fri Nov  9 11:45:16 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 3534|app: 0|req: 6/6] 113.87.162.199 () {42 vars in 707 bytes} [Fri Nov  9 11:45:18 2018] GET /axf/mine/ => generated 4415 bytes in 6 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 3)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 7/7] 113.87.162.199 () {38 vars in 634 bytes} [Fri Nov  9 11:45:19 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 3534|app: 0|req: 8/8] 113.87.162.199 () {42 vars in 734 bytes} [Fri Nov  9 11:45:20 2018] GET /axf/getallorderinfo/ => generated 0 bytes in 1 msecs (HTTP/1.1 302) 5 headers in 147 bytes (1 switches on core 2)
+[pid: 3537|app: 0|req: 1/9] 113.87.162.199 () {42 vars in 714 bytes} [Fri Nov  9 11:45:20 2018] GET /axf/login/ => generated 2853 bytes in 256 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 9/10] 113.87.162.199 () {38 vars in 634 bytes} [Fri Nov  9 11:45:21 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 2)
+[pid: 3534|app: 0|req: 10/11] 113.87.162.199 () {46 vars in 938 bytes} [Fri Nov  9 11:45:32 2018] POST /axf/login/ => generated 0 bytes in 17 msecs (HTTP/1.1 302) 6 headers in 277 bytes (1 switches on core 3)
+[pid: 3534|app: 0|req: 11/12] 113.87.162.199 () {44 vars in 770 bytes} [Fri Nov  9 11:45:32 2018] GET /axf/mine/ => generated 4832 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+Not Found: /favicon.ico
+[pid: 3537|app: 0|req: 2/13] 113.87.162.199 () {40 vars in 691 bytes} [Fri Nov  9 11:45:33 2018] GET /favicon.ico => generated 2064 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 3537|app: 0|req: 3/14] 113.87.162.199 () {44 vars in 795 bytes} [Fri Nov  9 11:45:38 2018] GET /axf/market/104749/0/0/ => generated 10160 bytes in 26 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 2)
+Not Found: /favicon.ico
+[pid: 3537|app: 0|req: 4/15] 113.87.162.199 () {40 vars in 691 bytes} [Fri Nov  9 11:45:39 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 3)
+[pid: 3534|app: 0|req: 12/16] 113.87.162.199 () {44 vars in 757 bytes} [Fri Nov  9 11:45:41 2018] GET /axf/addcarts/?goodsid=495 => generated 80 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 3534|app: 0|req: 13/17] 113.87.162.199 () {44 vars in 757 bytes} [Fri Nov  9 11:45:42 2018] GET /axf/addcarts/?goodsid=495 => generated 80 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 2)
+[pid: 3534|app: 0|req: 14/18] 113.87.162.199 () {44 vars in 782 bytes} [Fri Nov  9 11:45:43 2018] GET /axf/cart/ => generated 4589 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 3)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 15/19] 113.87.162.199 () {40 vars in 691 bytes} [Fri Nov  9 11:45:43 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 3534|app: 0|req: 16/20] 113.87.162.199 () {44 vars in 744 bytes} [Fri Nov  9 11:45:46 2018] GET /axf/placeorder/?test=1111 => generated 112 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 115 bytes (1 switches on core 0)
+[pid: 3534|app: 0|req: 17/21] 113.87.162.199 () {44 vars in 876 bytes} [Fri Nov  9 11:45:46 2018] GET /axf/getorderinfo/?ordernum=dff27c65-d574-5a5c-9d9f-be03d04d5148 => generated 2493 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 2)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 18/22] 113.87.162.199 () {40 vars in 691 bytes} [Fri Nov  9 11:45:46 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 3)
+[pid: 3534|app: 0|req: 19/23] 113.87.162.199 () {44 vars in 784 bytes} [Fri Nov  9 11:46:10 2018] GET /axf/pay/?orderid=9 => generated 881 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 101 bytes (1 switches on core 1)
+[pid: 3534|app: 0|req: 20/24] 113.87.162.199 () {44 vars in 742 bytes} [Fri Nov  9 11:46:37 2018] GET /axf/changesel/?cartid=20 => generated 80 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 3537|app: 0|req: 5/25] 113.87.162.199 () {44 vars in 742 bytes} [Fri Nov  9 11:46:38 2018] GET /axf/changesel/?cartid=20 => generated 80 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 3534|app: 0|req: 21/26] 113.87.162.199 () {44 vars in 742 bytes} [Fri Nov  9 11:46:39 2018] GET /axf/changesel/?cartid=20 => generated 80 bytes in 4 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 2)
+[pid: 3534|app: 0|req: 22/27] 113.87.162.199 () {46 vars in 813 bytes} [Fri Nov  9 11:46:41 2018] GET /axf/cart/ => generated 3757 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 3)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 23/28] 113.87.162.199 () {42 vars in 722 bytes} [Fri Nov  9 11:46:41 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 3537|app: 0|req: 6/29] 113.87.162.199 () {44 vars in 742 bytes} [Fri Nov  9 11:46:43 2018] GET /axf/changesel/?cartid=12 => generated 79 bytes in 8 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 3537|app: 0|req: 7/30] 113.87.162.199 () {44 vars in 744 bytes} [Fri Nov  9 11:46:46 2018] GET /axf/placeorder/?test=1111 => generated 112 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 115 bytes (1 switches on core 2)
+[pid: 3537|app: 0|req: 8/31] 113.87.162.199 () {44 vars in 876 bytes} [Fri Nov  9 11:46:46 2018] GET /axf/getorderinfo/?ordernum=67a070b6-f454-5d97-accf-ededa411df47 => generated 2499 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 3)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 24/32] 113.87.162.199 () {40 vars in 691 bytes} [Fri Nov  9 11:46:46 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 3534|app: 0|req: 25/33] 113.87.162.199 () {44 vars in 786 bytes} [Fri Nov  9 11:46:48 2018] GET /axf/pay/?orderid=10 => generated 874 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 101 bytes (1 switches on core 2)
+[pid: 3534|app: 0|req: 26/34] 113.88.15.38 () {46 vars in 811 bytes} [Fri Nov  9 11:48:34 2018] GET /axf/cart/ => generated 2940 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 3)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 27/35] 113.88.15.38 () {42 vars in 720 bytes} [Fri Nov  9 11:48:35 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 3537|app: 0|req: 9/36] 113.88.15.38 () {44 vars in 793 bytes} [Fri Nov  9 11:48:37 2018] GET /axf/market/104749/0/0/ => generated 9871 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 28/37] 113.88.15.38 () {40 vars in 689 bytes} [Fri Nov  9 11:48:38 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 3534|app: 0|req: 29/38] 113.88.15.38 () {44 vars in 819 bytes} [Fri Nov  9 11:48:39 2018] GET /axf/market/103532/0/0/ => generated 40732 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 2)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 30/39] 113.88.15.38 () {40 vars in 702 bytes} [Fri Nov  9 11:48:41 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 3)
+[pid: 3537|app: 0|req: 10/40] 113.88.15.38 () {44 vars in 768 bytes} [Fri Nov  9 11:48:42 2018] GET /axf/addcarts/?goodsid=531 => generated 80 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 1)
+[pid: 3537|app: 0|req: 11/41] 113.88.15.38 () {44 vars in 768 bytes} [Fri Nov  9 11:48:43 2018] GET /axf/addcarts/?goodsid=532 => generated 80 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 2)
+[pid: 3537|app: 0|req: 12/42] 113.88.15.38 () {44 vars in 768 bytes} [Fri Nov  9 11:48:44 2018] GET /axf/addcarts/?goodsid=533 => generated 80 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 3)
+[pid: 3534|app: 0|req: 31/43] 113.88.15.38 () {44 vars in 768 bytes} [Fri Nov  9 11:48:45 2018] GET /axf/addcarts/?goodsid=534 => generated 80 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 3534|app: 0|req: 32/44] 113.88.15.38 () {44 vars in 793 bytes} [Fri Nov  9 11:48:46 2018] GET /axf/cart/ => generated 6326 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 33/45] 113.88.15.38 () {40 vars in 702 bytes} [Fri Nov  9 11:48:47 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 2)
+[pid: 3534|app: 0|req: 34/46] 113.88.15.38 () {44 vars in 806 bytes} [Fri Nov  9 11:48:52 2018] GET /axf/market/104749/0/0/ => generated 47488 bytes in 25 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 3)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 35/47] 113.88.15.38 () {40 vars in 702 bytes} [Fri Nov  9 11:48:53 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 3534|app: 0|req: 36/48] 113.88.15.38 () {44 vars in 819 bytes} [Fri Nov  9 11:48:54 2018] GET /axf/market/103581/0/0/ => generated 30362 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 37/49] 113.88.15.38 () {40 vars in 702 bytes} [Fri Nov  9 11:48:55 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 2)
+[pid: 3534|app: 0|req: 38/50] 113.88.15.38 () {44 vars in 768 bytes} [Fri Nov  9 11:48:56 2018] GET /axf/addcarts/?goodsid=474 => generated 80 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 3)
+[pid: 3534|app: 0|req: 39/51] 113.88.15.38 () {44 vars in 793 bytes} [Fri Nov  9 11:48:58 2018] GET /axf/cart/ => generated 7159 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 40/52] 113.88.15.38 () {40 vars in 702 bytes} [Fri Nov  9 11:48:58 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 3534|app: 0|req: 41/53] 113.88.15.38 () {44 vars in 755 bytes} [Fri Nov  9 11:49:00 2018] GET /axf/placeorder/?test=1111 => generated 112 bytes in 36 msecs (HTTP/1.1 200) 4 headers in 115 bytes (1 switches on core 2)
+[pid: 3534|app: 0|req: 42/54] 113.88.15.38 () {44 vars in 887 bytes} [Fri Nov  9 11:49:00 2018] GET /axf/getorderinfo/?ordernum=129d0bd2-cae4-5b30-8766-1d476286783a => generated 3791 bytes in 13 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 3)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 43/55] 113.88.15.38 () {40 vars in 702 bytes} [Fri Nov  9 11:49:01 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 3534|app: 0|req: 44/56] 113.88.15.38 () {44 vars in 797 bytes} [Fri Nov  9 11:49:05 2018] GET /axf/pay/?orderid=11 => generated 870 bytes in 4 msecs (HTTP/1.1 200) 3 headers in 101 bytes (1 switches on core 1)
+[pid: 3534|app: 0|req: 45/57] 140.205.118.72 () {34 vars in 497 bytes} [Fri Nov  9 11:50:04 2018] POST /axf/notifyurl/ => generated 18 bytes in 0 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 2)
+[pid: 3537|app: 0|req: 13/58] 113.88.15.38 () {42 vars in 2012 bytes} [Fri Nov  9 11:50:15 2018] GET /axf/returnurl/?charset=utf-8&out_trade_no=11&method=alipay.trade.page.pay.return&total_amount=1.10&sign=VQycFl6yTLelobKOJOBtfLvCp9wey2YEuQ3vgU8Y%2BPHJ5rlIELWHRuNRjmT4I4qJq3%2FGhcwLVCvVip%2FXTIu8FmcLAexW1dL9G9P1LlWf2lc5nDVCBv1OtdLdeZLBiwlipGLSwb9FygmZ3d1sBeh41tRCBvBz%2FNXv66tvqxnBdl9bwGSAfhFwie4U23qULCAsZzImaeuZruhS%2BrUIVG%2F9v5QydmSncbGdSX2mOpgXCF7%2FuzvNDZajS484Wm3eA7SE1L5dmxQsyi65yGfZ7YUHs6kUDachH086nOfpcLcKZWkYQKFB6Iv1LOe7%2BgEcyQFBhamMs9wvsynkrE%2FWXNYx3Q%3D%3D&trade_no=2018110922001438720500752538&auth_app_id=2016091900547441&version=1.0&app_id=2016091900547441&sign_type=RSA2&seller_id=2088102176328329&timestamp=2018-11-09+11%3A50%3A11 => generated 0 bytes in 1 msecs (HTTP/1.1 302) 4 headers in 132 bytes (1 switches on core 0)
+[pid: 3536|app: 0|req: 1/59] 113.88.15.38 () {42 vars in 733 bytes} [Fri Nov  9 11:50:15 2018] GET /axf/mine/ => generated 4832 bytes in 267 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 46/60] 113.88.15.38 () {40 vars in 702 bytes} [Fri Nov  9 11:50:15 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 2)
+Not Found: /favicon.ico
+[pid: 3536|app: 0|req: 2/61] 113.88.15.38 () {40 vars in 702 bytes} [Fri Nov  9 11:50:43 2018] GET /favicon.ico => generated 2064 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 3)
+[pid: 3536|app: 0|req: 3/62] 113.88.15.38 () {44 vars in 764 bytes} [Fri Nov  9 11:50:46 2018] GET /axf/mine/ => generated 4832 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 2)
+Not Found: /favicon.ico
+[pid: 3536|app: 0|req: 4/63] 113.88.15.38 () {42 vars in 733 bytes} [Fri Nov  9 11:50:47 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 3534|app: 0|req: 47/64] 113.88.15.38 () {44 vars in 802 bytes} [Fri Nov  9 11:51:41 2018] GET /axf/getallorderinfo/ => generated 17675 bytes in 63 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 48/65] 113.87.162.199 () {40 vars in 704 bytes} [Fri Nov  9 11:51:42 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 3534|app: 0|req: 49/66] 113.87.162.199 () {44 vars in 793 bytes} [Fri Nov  9 11:51:56 2018] GET /axf/mine/ => generated 4832 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 3)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 50/67] 113.87.162.199 () {40 vars in 704 bytes} [Fri Nov  9 11:51:56 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 2)
+[pid: 3536|app: 0|req: 5/68] 140.205.118.234 () {34 vars in 497 bytes} [Fri Nov  9 11:56:18 2018] POST /axf/notifyurl/ => generated 18 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 1)
+[pid: 3536|app: 0|req: 6/69] 113.88.15.38 () {46 vars in 822 bytes} [Fri Nov  9 12:01:22 2018] GET /axf/mine/ => generated 4832 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+Not Found: /favicon.ico
+[pid: 3536|app: 0|req: 7/70] 113.87.162.199 () {42 vars in 735 bytes} [Fri Nov  9 12:01:23 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 2)
+[pid: 3534|app: 0|req: 51/71] 113.88.15.38 () {44 vars in 806 bytes} [Fri Nov  9 12:01:25 2018] GET /axf/market/104749/0/0/ => generated 28402 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 52/72] 113.88.15.38 () {40 vars in 702 bytes} [Fri Nov  9 12:01:26 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 3534|app: 0|req: 53/73] 113.88.15.38 () {44 vars in 819 bytes} [Fri Nov  9 12:01:28 2018] GET /axf/market/103532/0/0/ => generated 44110 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 3)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 54/74] 113.88.15.38 () {40 vars in 702 bytes} [Fri Nov  9 12:01:29 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 2)
+[pid: 3536|app: 0|req: 8/75] 113.88.15.38 () {44 vars in 768 bytes} [Fri Nov  9 12:01:30 2018] GET /axf/addcarts/?goodsid=533 => generated 80 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 2)
+[pid: 3536|app: 0|req: 9/76] 113.88.15.38 () {44 vars in 768 bytes} [Fri Nov  9 12:01:31 2018] GET /axf/addcarts/?goodsid=533 => generated 80 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 3)
+[pid: 3536|app: 0|req: 10/77] 113.88.15.38 () {44 vars in 768 bytes} [Fri Nov  9 12:01:32 2018] GET /axf/addcarts/?goodsid=534 => generated 80 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 1)
+[pid: 3534|app: 0|req: 55/78] 113.88.15.38 () {44 vars in 768 bytes} [Fri Nov  9 12:01:32 2018] GET /axf/addcarts/?goodsid=534 => generated 80 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 3534|app: 0|req: 56/79] 113.88.15.38 () {44 vars in 793 bytes} [Fri Nov  9 12:01:34 2018] GET /axf/cart/ => generated 5471 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 57/80] 113.88.15.38 () {40 vars in 702 bytes} [Fri Nov  9 12:01:34 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 3)
+[pid: 3534|app: 0|req: 58/81] 113.88.15.38 () {44 vars in 755 bytes} [Fri Nov  9 12:01:40 2018] GET /axf/placeorder/?test=1111 => generated 112 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 115 bytes (1 switches on core 2)
+[pid: 3534|app: 0|req: 59/82] 113.88.15.38 () {44 vars in 887 bytes} [Fri Nov  9 12:01:40 2018] GET /axf/getorderinfo/?ordernum=f6204ef0-bc48-5b27-ae84-146eb48b83c1 => generated 2521 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 60/83] 113.88.15.38 () {40 vars in 702 bytes} [Fri Nov  9 12:01:41 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 3534|app: 0|req: 61/84] 113.88.15.38 () {44 vars in 797 bytes} [Fri Nov  9 12:01:42 2018] GET /axf/pay/?orderid=12 => generated 886 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 101 bytes (1 switches on core 3)
+[pid: 3534|app: 0|req: 62/85] 140.205.118.77 () {34 vars in 497 bytes} [Fri Nov  9 12:02:35 2018] POST /axf/notifyurl/ => generated 18 bytes in 0 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 2)
+[pid: 3537|app: 0|req: 14/86] 113.88.15.38 () {42 vars in 2016 bytes} [Fri Nov  9 12:02:48 2018] GET /axf/returnurl/?charset=utf-8&out_trade_no=12&method=alipay.trade.page.pay.return&total_amount=1.10&sign=TBKMylVYxWpCHzj%2ByOXPHganW302HKDkd%2FU5E1I22ZgKO2ZrSbiLAmQXVNLoO9UPUgSE1tgSi7DFRK4olkTI9YBWGdNnA5BKo%2BtD6c51y9KaDEyU%2FsUZVZMa%2F6i164ooB7k6uI%2FO7OpNmwFrHRobIGTDiGkk5cu0QoL%2BanUhZJbp2ik8Tw9wbbxZn526ObDqHoWuWw4PlMtKXeVEjcA8V3QkfWPuNc8h7%2BPPRPtKoRo4MsyFcLdGAkjm4GWkchLj9zudH3EVxarUaNCrrdTmUhPRdUksNXGfdv98BVLKRbURS%2BRSHUenCDCDUQsqoqbAH8TyiQuE5td%2FHSDTQiyJSQ%3D%3D&trade_no=2018110922001438720500752632&auth_app_id=2016091900547441&version=1.0&app_id=2016091900547441&sign_type=RSA2&seller_id=2088102176328329&timestamp=2018-11-09+12%3A02%3A44 => generated 0 bytes in 1 msecs (HTTP/1.1 302) 4 headers in 132 bytes (1 switches on core 0)
+[pid: 3536|app: 0|req: 11/87] 113.88.15.38 () {42 vars in 733 bytes} [Fri Nov  9 12:02:48 2018] GET /axf/mine/ => generated 4832 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 63/88] 113.88.15.38 () {40 vars in 702 bytes} [Fri Nov  9 12:02:49 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 2)
+Not Found: /favicon.ico
+[pid: 3534|app: 0|req: 64/89] 113.88.15.38 () {40 vars in 702 bytes} [Fri Nov  9 12:02:51 2018] GET /favicon.ico => generated 2064 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 3534|app: 0|req: 65/90] 113.88.15.38 () {44 vars in 764 bytes} [Fri Nov  9 12:02:54 2018] GET /axf/mine/ => generated 4832 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 3)
+Not Found: /favicon.ico
+[pid: 3536|app: 0|req: 12/91] 113.88.15.38 () {42 vars in 733 bytes} [Fri Nov  9 12:02:55 2018] GET /favicon.ico => generated 2064 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 2)
