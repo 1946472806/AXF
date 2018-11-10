@@ -18,7 +18,7 @@
     <schema id="4" parent="1" name="information_schema">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="5" parent="1" name="mxdb">
+    <schema id="5" parent="1" name="mxndb">
       <Collation>utf8_general_ci</Collation>
     </schema>
     <schema id="6" parent="1" name="mysql">

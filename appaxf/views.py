@@ -298,7 +298,7 @@ def placeorder(request):
         for cart in carts:
             orderinfo = Orderinfo.createorderinfo(order,cart.goods,cart.number)
             orderinfo.save()
-            #删除已下单的数据
+            # 删除相应购物车数据
             cart.delete()
         #跳转到已下单界面
         return JsonResponse({'msg':'下单成功！','ordernum':ordernum,'backstatus': '1'})
@@ -314,10 +314,38 @@ def getorderinfo(request):
 
 # 支付完成后，支付宝调用的(通知AXF服务端)
 def notifyurl(request):
-    #这里应该根据返回的状态和单据号更新用户订单表中的订单状态
-    # print('%%%%%%%%%%%%%%%%%%%%%%%%%%%')
-    # print(request.GET.get('subject'))
-    return JsonResponse({'msg': 'success'})
+    if request.method == "POST":
+        # 检测是否支付成功
+        # 去请求体中获取所有返回的数据：状态/订单号
+        from urllib.parse import parse_qs
+        # name&age=123....
+        body_str = request.body.decode('utf-8')
+        post_data = parse_qs(body_str)
+
+        post_dict = {}
+        for k, v in post_data.items():
+            post_dict[k] = v[0]
+
+        # post_dict有10key： 9 ，1
+        sign = post_dict.pop('sign', None)
+        status = alipay_axf.verify(post_dict, sign) #POST验证 True
+
+        #返回接收到的数据post_dict如下：
+        # {'gmt_create': '2018-11-09 21:47:10', 'charset': 'utf-8', 'gmt_payment': '2018-11-09 21:47:26',
+        #  'notify_time': '2018-11-09 21:47:27', 'subject': '测试订单 --- iphone XX', 'buyer_id': '2088102176438721',
+        #  'invoice_amount': '1.10', 'version': '1.0', 'notify_id': '9196624f14c7d2f4a91eaff2a9c4042lk5',
+        #  'fund_bill_list': '[{"amount":"1.10","fundChannel":"ALIPAYACCOUNT"}]', 'notify_type': 'trade_status_sync',
+        #  'out_trade_no': '15', 'total_amount': '1.10', 'trade_status': 'TRADE_SUCCESS',
+        #  'trade_no': '2018110922001438720500754426', 'auth_app_id': '2016091900547441', 'receipt_amount': '1.10',
+        #  'point_amount': '0.00', 'app_id': '2016091900547441', 'buyer_pay_amount': '1.10',
+        #  'seller_id': '2088102176328329'}
+
+        #得到订单号
+        out_trade_no = post_dict['out_trade_no']
+
+        # 这里应该根据返回的状态和单据号更新用户订单表中的订单状态
+        Order.objects.filter(pk=out_trade_no).update(status=2)
+        return JsonResponse({'msg': 'success'})
 
 # 支付完成后，AXF客户端跳转的页面
 def returnurl(request):
